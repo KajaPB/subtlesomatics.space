@@ -14,7 +14,7 @@ import DraftLayout from '../../layouts/DraftLayout.astro';
       <h1 class="hero-anim" data-anim-order="2">Come home to the wisdom of your body</h1>
       <p class="hero-sub hero-anim" data-anim-order="3">Presence-based coaching and spinal energetics for those ready to meet themselves at the depth where transformation naturally unfolds.</p>
       <div class="hero-actions hero-anim" data-anim-order="4">
-        <a href="#booking" class="btn btn-filled">Book a Free Discovery Call</a>
+        <button data-cal-link="subtlesomatics/discovery" data-cal-config='{"theme":"dark"}' class="btn btn-filled">Book a Free Discovery Call</button>
         <a href="#philosophy" class="btn">Explore</a>
       </div>
     </div>
@@ -23,6 +23,23 @@ import DraftLayout from '../../layouts/DraftLayout.astro';
       <svg width="16" height="24" viewBox="0 0 16 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="3 12 8 17 13 12"></polyline>
       </svg>
+    </div>
+  </section>
+
+  <!-- Trust bar -->
+  <section class="trust-bar">
+    <div class="trust-inner">
+      <span>Certified Spinal Energetics Practitioner</span>
+      <span class="trust-sep" aria-hidden="true">&middot;</span>
+      <span>Aletheia Coaching Training</span>
+      <span class="trust-sep" aria-hidden="true">&middot;</span>
+      <span>200h Yoga TT</span>
+      <span class="trust-sep" aria-hidden="true">&middot;</span>
+      <span>Reiki Level I + II</span>
+      <span class="trust-sep" aria-hidden="true">&middot;</span>
+      <span>MSc Integrative Psychotherapy (ongoing)</span>
+      <span class="trust-sep" aria-hidden="true">&middot;</span>
+      <span>Vienna, Austria</span>
     </div>
   </section>
 
@@ -167,6 +184,53 @@ import DraftLayout from '../../layouts/DraftLayout.astro';
     <div class="ib-overlay"></div>
   </section>
 
+  <!-- Testimonials -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="testimonials-inner">
+      <p class="eyebrow text-center reveal">Kind words</p>
+      <h2 class="text-center reveal" data-delay="100">What others experience</h2>
+      <p class="text-center testimonials-note reveal" data-delay="200">Real testimonials coming soon. These are placeholders to show the format.</p>
+      <div class="testimonial-track reveal" data-delay="300">
+        <div class="testimonial-card">
+          <blockquote>
+            <p>"The session was unlike anything I've experienced. I felt held in a way that allowed something deep in me to soften and reorganise. A week later, I still feel more spacious in my body."</p>
+          </blockquote>
+          <div class="testimonial-author">
+            <p class="author-name">Placeholder</p>
+            <p class="author-role">Vienna</p>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <blockquote>
+            <p>"Kaja has this incredible presence — steady, warm, and deeply attuned. I came in feeling overwhelmed and left with a sense of quiet clarity I hadn't felt in months."</p>
+          </blockquote>
+          <div class="testimonial-author">
+            <p class="author-name">Placeholder</p>
+            <p class="author-role">Online session</p>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <blockquote>
+            <p>"What I appreciated most was the absence of pressure. Nothing was forced — my body led the process and Kaja simply followed with extraordinary care and precision."</p>
+          </blockquote>
+          <div class="testimonial-author">
+            <p class="author-name">Placeholder</p>
+            <p class="author-role">Spinal Energetics</p>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <blockquote>
+            <p>"After three sessions I noticed I was standing differently, breathing differently, responding to stress differently. The shifts are subtle at first, then unmistakable."</p>
+          </blockquote>
+          <div class="testimonial-author">
+            <p class="author-name">Placeholder</p>
+            <p class="author-role">Series of sessions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Booking -->
   <section class="section booking-section" id="booking">
     <div class="booking-inner reveal">
@@ -265,6 +329,28 @@ import DraftLayout from '../../layouts/DraftLayout.astro';
     0%, 100% { transform: translateX(-50%) translateY(0); }
     50% { transform: translateX(-50%) translateY(8px); }
   }
+
+  /* ===== Trust bar ===== */
+  .trust-bar {
+    background: var(--bg-surface);
+    text-align: center;
+    padding: 1.2rem 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .trust-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.3rem 0;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .trust-inner span { white-space: nowrap; }
+  .trust-sep { margin: 0 0.8rem; opacity: 0.4; }
 
   /* ===== Shared ===== */
   .eyebrow { font-family: var(--font-body); font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
@@ -386,6 +472,55 @@ import DraftLayout from '../../layouts/DraftLayout.astro';
   .image-break { position: relative; height: 50vh; overflow: hidden; }
   .image-break img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); }
   .ib-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(13,13,15,0.1), rgba(13,13,15,0.4)); }
+
+  /* ===== Testimonials ===== */
+  .testimonials-section {
+    background: var(--bg-surface);
+    padding: 6rem 2rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .testimonials-inner { max-width: var(--max-width); margin: 0 auto; }
+  .testimonials-inner h2 { margin-bottom: 0.5rem; }
+  .testimonials-note { color: var(--text-muted); font-size: 0.85rem; font-style: italic; margin: 0.5rem auto 2.5rem; }
+  .testimonial-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1.5rem;
+    padding: 0.5rem 0 1.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--bg-elevated);
+  }
+  .testimonial-track::-webkit-scrollbar { height: 4px; }
+  .testimonial-track::-webkit-scrollbar-track { background: var(--bg-elevated); }
+  .testimonial-track::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+  .testimonial-card {
+    min-width: min(380px, 85vw);
+    max-width: 380px;
+    scroll-snap-align: start;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+  .testimonial-card blockquote p {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: none;
+    margin-bottom: 1.5rem;
+  }
+  .testimonial-author { border-top: 1px solid var(--border); padding-top: 1rem; }
+  .author-name { font-size: 0.9rem; color: var(--accent); font-weight: 400; margin-bottom: 0.15rem; }
+  .author-role { font-size: 0.8rem; color: var(--text-muted); }
 
   /* ===== Booking ===== */
   .booking-section { background: var(--bg-surface); border-top: 1px solid var(--border); }
