@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+import siteContent from '../content/site-content.json';
+const { writings } = siteContent;
+const w = writings.en;
+---
+
+<Layout title="Writings — Subtle Somatics" description={w.subtitle} lang="en" altLangUrl="/de/schriften">
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <h1>{w.title}</h1>
+      <p>{w.subtitle}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    {writings.posts.length > 0 ? (
+      <div class="writings-grid">
+        {writings.posts.map((post: any) => (
+          <article class="writing-card">
+            <time>{post.date}</time>
+            <h2>{post.title}</h2>
+            <p>{post.excerpt}</p>
+          </article>
+        ))}
+      </div>
+    ) : (
+      <div class="writings-empty text-center">
+        <p class="writings-soon">Writings are unfolding. Check back soon.</p>
+        <p>In the meantime, follow along on <a href="https://www.instagram.com/subtlesomatics/" target="_blank" rel="noopener noreferrer">Instagram</a>.</p>
+      </div>
+    )}
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero {
+    background: var(--color-meteorite-dark);
+    color: var(--color-light);
+    padding: 10rem 2rem 6rem;
+    text-align: center;
+  }
+
+  .page-hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .page-hero h1 {
+    color: var(--color-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .page-hero p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.15rem;
+    margin: 0 auto;
+  }
+
+  .writings-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .writing-card {
+    border-bottom: 1px solid rgba(47, 28, 106, 0.1);
+    padding-bottom: 3rem;
+  }
+
+  .writing-card time {
+    font-size: 0.85rem;
+    color: var(--color-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .writing-card h2 {
+    margin: 0.75rem 0 1rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .writing-card p {
+    color: var(--color-dark);
+  }
+
+  .writings-empty {
+    max-width: 500px;
+    margin: 2rem auto;
+  }
+
+  .writings-soon {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--color-meteorite);
+    margin-bottom: 1rem;
+  }
+
+  .writings-empty p {
+    margin: 0 auto;
+    color: var(--color-gray);
+  }
+</style>

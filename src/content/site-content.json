@@ -1,0 +1,41 @@
+{
+  "testimonials": [],
+  "groupSessions": {
+    "en": {
+      "title": "Group Sessions",
+      "subtitle": "Subtle Somatic Exploration",
+      "description": "After landing in stillness together, you're invited to tune into spontaneous movements and find resonance with your hands hovering or touching your body. With accompanying soft journeying music, your movements can guide and deepen integration, release of emotions and contact with resourceful qualities of presence.",
+      "details": [
+        "Landing in stillness together",
+        "Tuning into spontaneous subtle movements",
+        "Soft journeying music to support the process",
+        "Deepening integration and self-contact"
+      ]
+    },
+    "de": {
+      "title": "Gruppensitzungen",
+      "subtitle": "Feinspürige somatische Erkundung",
+      "description": "Nach dem gemeinsamen Ankommen in der Stille bist du eingeladen, spontane Bewegungen wahrzunehmen und mit deinen Händen schwebend oder berührend Resonanz zu finden. Begleitet von sanfter Reisemusik können deine Bewegungen Integration vertiefen, Emotionen lösen und Kontakt mit ressourcenvollen Qualitäten der Präsenz ermöglichen.",
+      "details": [
+        "Gemeinsames Ankommen in der Stille",
+        "Einstimmen auf spontane feine Bewegungen",
+        "Sanfte Reisemusik zur Begleitung",
+        "Vertiefung von Integration und Selbstkontakt"
+      ]
+    }
+  },
+  "writings": {
+    "en": {
+      "title": "Writings",
+      "subtitle": "Reflections and insights from the path of subtle somatic unfolding."
+    },
+    "de": {
+      "title": "Schriften",
+      "subtitle": "Reflexionen und Einsichten vom Weg der feinspürigen somatischen Entfaltung."
+    },
+    "posts": []
+  },
+  "events": {
+    "upcoming": []
+  }
+}
