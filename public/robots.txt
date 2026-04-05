@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://subtlesomatics.space/sitemap-index.xml
