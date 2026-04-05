@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Impressum — Subtle Somatics" description="Impressum und rechtliche Informationen." lang="de">
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <h1>Impressum</h1>
+      <p>Informationspflicht laut ECG &sect;5, UGB &sect;14, GewO &sect;63</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="legal-content">
+
+      <h2>Dienstanbieterin</h2>
+      <p>
+        Kaja Possert-Bienzle<br />
+        Subtle Somatics — Humanenergetik<br />
+        <!-- TODO: Vollst&auml;ndige Gesch&auml;ftsadresse mit Bezirk einf&uuml;gen -->
+        <strong>[TODO: Adresse mit Wiener Bezirk]</strong><br />
+        Wien, &Ouml;sterreich
+      </p>
+
+      <h2>Kontakt</h2>
+      <p>
+        E-Mail: <a href="mailto:connect@subtlesomatics.space">connect@subtlesomatics.space</a><br />
+        Telefon / WhatsApp: <a href="tel:+4368120713366">+43 681 20713366</a><br />
+        Web: <a href="https://subtlesomatics.space">subtlesomatics.space</a>
+      </p>
+
+      <h2>Gewerberechtliche Angaben</h2>
+      <p>
+        Freies Gewerbe: Humanenergetik<br />
+        <!-- TODO: GISA-Zahl / Gewerbeschein-Nummer einf&uuml;gen -->
+        GISA-Zahl: <strong>[TODO: GISA-Nummer]</strong><br />
+        Mitglied der Wirtschaftskammer Wien (WK Wien)<br />
+        Fachgruppe: Personenberatung und Personenbetreuung<br />
+        Beh&ouml;rde gem. ECG: Magistratisches Bezirksamt <!-- TODO: Bezirksamt einf&uuml;gen --> <strong>[TODO: Bezirk]</strong>
+      </p>
+
+      <h2>Berufsbezeichnung</h2>
+      <p>
+        Humanenergetikerin (freies Gewerbe gem&auml;&szlig; GewO 1994)<br />
+        Berufsrecht: <a href="https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=10007517" target="_blank" rel="noopener noreferrer">Gewerbeordnung 1994 (GewO)</a><br />
+        <!-- TODO: WKO Qualit&auml;tszertifikat falls vorhanden -->
+        Zertifizierungen: <strong>[TODO: IICT-Zertifizierung, Spinal Energetics Level, weitere Ausbildungen]</strong>
+      </p>
+
+      <h2>Anwendbare Rechtsvorschriften</h2>
+      <ul>
+        <li>Gewerbeordnung 1994 (GewO)</li>
+        <li>E-Commerce-Gesetz (ECG)</li>
+        <li>Unternehmensgesetzbuch (UGB)</li>
+        <li>Datenschutzgrundverordnung (DSGVO)</li>
+        <li>Bundesgesetz &uuml;ber den Schutz personenbezogener Daten (DSG)</li>
+      </ul>
+
+      <h2>Hinweis gem&auml;&szlig; Humanenergetik</h2>
+      <div class="legal-notice">
+        <p>Die energetische Hilfestellung besch&auml;ftigt sich ausschlie&szlig;lich mit der Aktivierung und Harmonisierung k&ouml;rpereigener Energiefelder (Lebensenergie).</p>
+        <p>Da diese Ma&szlig;nahmen der Wiederherstellung und Harmonisierung der k&ouml;rpereigenen Energiefelder dienen, stellen sie keine Heilbehandlung dar.</p>
+        <p>Die Wirkungsweise und der Erfolg der energetischen Behandlung ist naturwissenschaftlich nicht belegt bzw. bei bestimmten Methoden widerlegt.</p>
+        <p>Dementsprechend stellt die energetische Hilfestellung keinerlei Ersatz f&uuml;r &auml;rztliche Diagnose und Behandlung dar, auch keinerlei Ersatz f&uuml;r psychologische oder psychotherapeutische Behandlung oder Untersuchung.</p>
+        <p>S&auml;mtliche Aussagen und Ratschl&auml;ge sind keine Diagnosen, sondern stellen reine energetische Zustandsbeschreibungen dar.</p>
+        <p class="legal-ref">Gem&auml;&szlig; &sect;2 Abs. 2 des &ouml;sterreichischen &Auml;rztegesetzes und den Richtlinien der WKO f&uuml;r Humanenergetiker.</p>
+      </div>
+
+      <h2>Urheberrecht</h2>
+      <p>Die Inhalte dieser Website (Texte, Bilder, Grafiken) sind urheberrechtlich gesch&uuml;tzt. Jede Verwertung au&szlig;erhalb der Grenzen des Urheberrechtsgesetzes bedarf der vorherigen schriftlichen Zustimmung.</p>
+
+      <h2>Haftungsausschluss</h2>
+      <p>Trotz sorgf&auml;ltiger Pr&uuml;fung wird keine Haftung f&uuml;r die Inhalte externer Links &uuml;bernommen. F&uuml;r den Inhalt verlinkter Seiten sind ausschlie&szlig;lich deren Betreiber verantwortlich.</p>
+
+      <h2>Online-Streitbeilegung</h2>
+      <p>Verbraucher haben die M&ouml;glichkeit, Beschwerden an die Online-Streitbeilegungsplattform der EU zu richten: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">ec.europa.eu/consumers/odr</a></p>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero {
+    background: var(--color-meteorite-dark);
+    color: var(--color-light);
+    padding: 10rem 2rem 6rem;
+    text-align: center;
+  }
+  .page-hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .page-hero h1 { color: var(--color-light); margin-bottom: 1.5rem; }
+  .page-hero p { color: rgba(255,255,255,0.8); font-size: 1.15rem; margin: 0 auto; }
+
+  .legal-content {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  .legal-content h2 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+  }
+  .legal-content h2:first-child { margin-top: 0; }
+  .legal-content p { margin-bottom: 1rem; color: var(--color-dark); }
+  .legal-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+  .legal-content li {
+    padding: 0.3rem 0 0.3rem 1.5rem;
+    position: relative;
+    color: var(--color-dark);
+    font-size: 0.95rem;
+  }
+  .legal-content li::before {
+    content: '\2014';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary-light);
+  }
+  .legal-notice {
+    background: var(--color-cream);
+    padding: 2rem;
+    border-left: 3px solid var(--color-primary-light);
+    margin: 1rem 0 2rem;
+  }
+  .legal-notice p { font-size: 0.95rem; margin-bottom: 0.8rem; }
+  .legal-notice p:last-child { margin-bottom: 0; }
+  .legal-ref {
+    font-size: 0.85rem !important;
+    color: var(--color-gray) !important;
+    font-style: italic;
+    margin-top: 1rem;
+  }
+</style>

@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Services — Subtle Somatics" description="Connect with your innate resources through presence-based coaching and energetic somatic modalities for deeper healing.">
+<Layout title="Services — Subtle Somatics" description="Connect with your innate resources through presence-based coaching and energetic somatic modalities for deeper healing." lang="en" altLangUrl="/de/angebote">
 
   <!-- Hero -->
   <section class="page-hero">
@@ -63,14 +63,21 @@ import Layout from '../layouts/Layout.astro';
       <div class="transform-grid">
         <div class="transform-card">
           <h3>Individual Sessions</h3>
+          <p class="price">&euro;130</p>
+          <p class="price-detail">per session &middot; approx. 60 min</p>
           <p>One-on-one sessions tailored to your unique process. Whether you are drawn to presence-based coaching, spinal energetics, or a blend of both, each session meets you exactly where you are.</p>
+          <p class="price-note">Available in person (Vienna) and online (Zoom)</p>
         </div>
         <div class="transform-card">
           <h3>Discovery Call</h3>
+          <p class="price">Free</p>
+          <p class="price-detail">approx. 20 min</p>
           <p>A free introductory conversation to explore whether this work resonates with you. We'll connect, I'll listen to what's alive for you, and together we'll sense into the right next step.</p>
         </div>
         <div class="transform-card">
           <h3>Series of Sessions</h3>
+          <p class="price">5 &times; &euro;130</p>
+          <p class="price-detail">individual pacing</p>
           <p>Deeper transformation unfolds over time. A series of sessions allows for sustained exploration, integration, and the gradual embodiment of your innate wholeness.</p>
         </div>
       </div>
@@ -311,8 +318,34 @@ import Layout from '../layouts/Layout.astro';
 
   .transform-card h3 {
     color: var(--color-primary-light);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-style: italic;
+  }
+
+  .transform-card .price {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--color-light);
+    font-weight: 500;
+    margin-bottom: 0;
+    max-width: none;
+  }
+
+  .transform-card .price-detail {
+    font-size: 0.8rem;
+    color: var(--color-primary-light);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+    max-width: none;
+  }
+
+  .transform-card .price-note {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 0.75rem;
+    font-style: italic;
+    max-width: none;
   }
 
   .transform-card p {

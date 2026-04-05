@@ -1,0 +1,167 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import heroContent from '../../content/hero.json';
+const hero = heroContent.de;
+---
+
+<Layout title="Subtle Somatics: Feinsp\u00fcrige K\u00f6rperarbeit Wien" description="Entdecke deine angeborenen Ressourcen durch pr\u00e4senzbasiertes Coaching und Spinal Energetics. Wien, \u00d6sterreich." lang="de" altLangUrl="/">
+
+  <!-- Hero — content synced from Tana node {hero.tanaNodeId} -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="/images/hero.jpg" alt="Kaja \u2014 Subtle Somatics" loading="eager" fetchpriority="high" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-intro">{hero.intro}</p>
+      <div class="hero-lines">
+        {hero.lines.map((line) => (
+          <p><em>{line.emphasis}</em> <span>{line.text}</span></p>
+        ))}
+      </div>
+      <a href="#angebot" class="btn">Mehr erfahren</a>
+    </div>
+  </section>
+
+  <!-- \u00dcber Kaja -->
+  <section class="about-intro section">
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="/images/kaja-profile.jpg" alt="Kaja Possert-Bienzle" />
+      </div>
+      <div class="about-text">
+        <h2>Hi! Ich bin Kaja Possert-Bienzle.</h2>
+        <p class="about-role">Entfaltungsbegleiterin, Ganzheits-Zeugin und Integrationsfazilitatorin \u2014 der feinen Kunst gewidmet, das zu entfalten, was lebendig und wahr ist.</p>
+        <p>Ich arbeite mit der nat\u00fcrlichen Intelligenz deines K\u00f6rper-Geist-Seele-Systems, wo Empfindungen zu sprechen beginnen, Energie sich aus der Tiefe reorganisiert und etwas zutiefst Resonantes in dir durch stille Pr\u00e4senz in Bewegung kommt.</p>
+        <p>In dieser Arbeit geht es nicht ums Reparieren oder Streben \u2014 es geht darum, das Feld zu betreten, in dem sich das Wahre von selbst zeigt, in seinem eigenen Rhythmus und seiner eigenen Zeit.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Angebote -->
+  <section class="offerings section-dark" id="angebot">
+    <div class="offerings-inner">
+      <h2 class="text-center">Was ich anbiete</h2>
+      <div class="offerings-grid">
+        <div class="offering-card">
+          <h3>Eine Begegnung</h3>
+          <p>Wirklich kennenlernen, welche Gedanken, Emotionen und Empfindungen du Moment f\u00fcr Moment hast.</p>
+        </div>
+        <div class="offering-card">
+          <h3>Eine Entfaltung</h3>
+          <p>Deine gro\u00dfe innere Ressourcenf\u00fclle erleben \u2014 in Form von St\u00e4rke, Liebe, Pr\u00e4senz und mehr.</p>
+        </div>
+        <div class="offering-card">
+          <h3>Eine Integration</h3>
+          <p>In tiefere Koh\u00e4renz, Ausrichtung und Verk\u00f6rperung deiner angeborenen Ganzheit eintauchen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services-preview section">
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-image">
+          <img src="/images/subtle-coaching.png" alt="Subtle Coaching" />
+        </div>
+        <div class="service-content">
+          <h3>Subtle Coaching</h3>
+          <p>Begegne dir selbst, wo du gerade im Leben stehst \u2014 in der Tiefe, in der du reich ausgestattet bist, um mit der Komplexit\u00e4t des Lebens zu sein.</p>
+          <p class="service-sub">Verk\u00f6rpere deine tiefgreifenden angeborenen Qualit\u00e4ten durch vertieften Selbstkontakt.</p>
+          <a href="/de/angebote" class="btn">Mehr erfahren</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-image">
+          <img src="/images/spinal-energetics.png" alt="Spinal Energetics" />
+        </div>
+        <div class="service-content">
+          <h3>Spinal Energetics</h3>
+          <p>Erlebe tiefgreifende K\u00f6rper-Geist-Seele-Verbindung und Integration \u2014 unterst\u00fctzt durch feine und kraftvolle Ber\u00fchrung und Klang.</p>
+          <p class="service-sub">Erlebe tiefgreifende Integration mit einer feinen und kraftvollen somatischen Modalit\u00e4t.</p>
+          <a href="/de/angebote" class="btn">Mehr erfahren</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bild -->
+  <section class="image-break">
+    <img src="/images/kaja-secondary.png" alt="Kaja \u2014 Pr\u00e4senz und Verk\u00f6rperung" />
+    <div class="image-break-overlay"></div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg { position: absolute; inset: 0; }
+  .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(31,19,70,0.3) 0%, rgba(31,19,70,0.5) 50%, rgba(31,19,70,0.7) 100%);
+  }
+  .hero-content {
+    position: relative; z-index: 1; text-align: center;
+    color: var(--color-light); padding: 2rem; max-width: 800px; margin-top: 4rem;
+  }
+  .hero-intro {
+    font-family: var(--font-heading); font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-style: italic; font-weight: 300; margin-bottom: 2.5rem; opacity: 0.9;
+  }
+  .hero-lines { margin-bottom: 3rem; }
+  .hero-lines p {
+    font-family: var(--font-heading); font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 300; margin-bottom: 1.2rem; line-height: 1.5; max-width: none;
+  }
+  .hero-lines em { font-weight: 500; font-size: 1.1em; display: block; color: var(--color-primary-light); margin-bottom: 0.2rem; }
+  .hero-lines span { opacity: 0.9; }
+  .hero .btn { border-color: var(--color-light); color: var(--color-light); margin-top: 1rem; }
+  .hero .btn:hover { background: var(--color-light); color: var(--color-meteorite-dark); }
+
+  .about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: center; }
+  .about-image img { border-radius: 2px; box-shadow: 0 20px 60px rgba(31,19,70,0.1); }
+  .about-text h2 { margin-bottom: 1.5rem; font-size: clamp(1.8rem, 3.5vw, 2.5rem); }
+  .about-role { font-style: italic; color: var(--color-gray); margin-bottom: 1.5rem; font-size: 1.1rem; }
+  .about-text p { margin-bottom: 1.2rem; color: var(--color-dark); }
+
+  .offerings { padding: 6rem 2rem; }
+  .offerings-inner { max-width: var(--max-width); margin: 0 auto; }
+  .offerings h2 { margin-bottom: 4rem; font-size: clamp(2rem, 4vw, 3rem); }
+  .offerings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+  .offering-card { text-align: center; padding: 2rem; }
+  .offering-card h3 { color: var(--color-primary-light); margin-bottom: 1.5rem; font-size: 1.8rem; font-style: italic; }
+  .offering-card p { color: rgba(255,255,255,0.8); line-height: 1.8; margin: 0 auto; }
+
+  .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .service-card { background: var(--color-cream); overflow: hidden; border-radius: 2px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(31,19,70,0.1); }
+  .service-image img { width: 100%; height: 280px; object-fit: cover; }
+  .service-content { padding: 2rem; }
+  .service-content h3 { margin-bottom: 1rem; font-size: 1.8rem; }
+  .service-content p { margin-bottom: 1rem; color: var(--color-dark); font-size: 0.95rem; }
+  .service-sub { font-style: italic; color: var(--color-gray) !important; font-size: 0.9rem !important; }
+  .service-content .btn { margin-top: 1rem; font-size: 0.8rem; }
+
+  .image-break { position: relative; height: 60vh; overflow: hidden; }
+  .image-break img { width: 100%; height: 100%; object-fit: cover; }
+  .image-break-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(31,19,70,0.1) 0%, rgba(31,19,70,0.2) 100%); }
+
+  @media (max-width: 768px) {
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .about-image { max-width: 320px; margin: 0 auto; }
+    .offerings-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .hero-content { padding: 1.5rem; }
+    .image-break { height: 40vh; }
+  }
+</style>

@@ -1,31 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import heroContent from '../content/hero.json';
+const hero = heroContent.en;
 ---
 
-<Layout title="Subtle Somatics: Mind-Body Connection and Energetic Coaching" description="Discover your innate resources through presence-based coaching and spinal energetics.">
+<Layout title="Subtle Somatics: Mind-Body Connection and Energetic Coaching" description="Discover your innate resources through presence-based coaching and spinal energetics. Vienna, Austria." lang="en" altLangUrl="/de">
 
-  <!-- Hero -->
+  <!-- Hero — content synced from Tana node {hero.tanaNodeId} -->
   <section class="hero">
     <div class="hero-bg">
-      <img src="/images/hero.jpg" alt="Kaja — Subtle Somatics" />
+      <img src="/images/hero.jpg" alt="Kaja — Subtle Somatics" loading="eager" fetchpriority="high" />
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
-      <p class="hero-intro">I'm inviting you&hellip;</p>
+      <p class="hero-intro">{hero.intro}</p>
       <div class="hero-lines">
-        <p><em>to align</em> <span>with the free-flowing rhythm of your essence</span></p>
-        <p><em>to unfold</em> <span>the luminous wonder of deeper aliveness</span></p>
-        <p><em>to embody</em> <span>the radiant expression of your unique creativity, love and power</span></p>
+        {hero.lines.map((line) => (
+          <p><em>{line.emphasis}</em> <span>{line.text}</span></p>
+        ))}
       </div>
       <a href="#offer" class="btn">Discover more</a>
     </div>
   </section>
 
   <!-- About Kaja -->
-  <section class="about-intro section">
+  <section class="about-intro section reveal">
     <div class="about-grid">
       <div class="about-image">
-        <img src="/images/kaja-profile.jpg" alt="Kaja Possert-Bienzle" />
+        <img src="/images/kaja-profile.jpg" alt="Kaja Possert-Bienzle" loading="lazy" />
       </div>
       <div class="about-text">
         <h2>Hi! I'm Kaja Possert-Bienzle.</h2>
@@ -58,11 +60,11 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Services -->
-  <section class="services-preview section">
+  <section class="services-preview section reveal">
     <div class="services-grid">
       <div class="service-card">
         <div class="service-image">
-          <img src="/images/subtle-coaching.png" alt="Subtle Coaching" />
+          <img src="/images/subtle-coaching.png" alt="Subtle Coaching" loading="lazy" />
         </div>
         <div class="service-content">
           <h3>Subtle Coaching</h3>
@@ -73,7 +75,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="service-card">
         <div class="service-image">
-          <img src="/images/spinal-energetics.png" alt="Spinal Energetics" />
+          <img src="/images/spinal-energetics.png" alt="Spinal Energetics" loading="lazy" />
         </div>
         <div class="service-content">
           <h3>Spinal Energetics</h3>
@@ -87,7 +89,7 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- Second Image Section -->
   <section class="image-break">
-    <img src="/images/kaja-secondary.png" alt="Kaja — presence and embodiment" />
+    <img src="/images/kaja-secondary.png" alt="Kaja — presence and embodiment" loading="lazy" />
     <div class="image-break-overlay"></div>
     <div class="image-break-cta">
       <p>I'd love to have you and feel honoured to serve you — just where you are.</p>
