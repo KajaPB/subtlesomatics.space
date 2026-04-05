@@ -77,8 +77,8 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <div class="service-content">
           <h3>Spinal Energetics</h3>
-          <p>Experience profound mind-body-soul connection and integration — supported by subtle-and-powerful touch and sound.</p>
-          <p class="service-sub">Experience profound integration with a subtle and powerful somatic modality.</p>
+          <p>A subtle yet powerful modality incorporating sound, touch, movement and music to help your nervous system unwind.</p>
+          <p class="service-sub">Unravelling more and more of who you are — truly.</p>
           <a href="/services" class="btn">Learn more</a>
         </div>
       </div>
@@ -89,6 +89,10 @@ import Layout from '../layouts/Layout.astro';
   <section class="image-break">
     <img src="/images/kaja-secondary.png" alt="Kaja — presence and embodiment" />
     <div class="image-break-overlay"></div>
+    <div class="image-break-cta">
+      <p>I'd love to have you and feel honoured to serve you — just where you are.</p>
+      <a href="/contact" class="btn">Book a free discovery call</a>
+    </div>
   </section>
 
 </Layout>
@@ -319,9 +323,38 @@ import Layout from '../layouts/Layout.astro';
     inset: 0;
     background: linear-gradient(
       to bottom,
-      rgba(31, 19, 70, 0.1) 0%,
-      rgba(31, 19, 70, 0.2) 100%
+      rgba(31, 19, 70, 0.2) 0%,
+      rgba(31, 19, 70, 0.6) 100%
     );
+  }
+
+  .image-break-cta {
+    position: absolute;
+    bottom: 4rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 1;
+    padding: 0 2rem;
+  }
+
+  .image-break-cta p {
+    font-family: var(--font-heading);
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 auto 1.5rem;
+    max-width: 500px;
+  }
+
+  .image-break-cta .btn {
+    border-color: var(--color-light);
+    color: var(--color-light);
+  }
+
+  .image-break-cta .btn:hover {
+    background: var(--color-light);
+    color: var(--color-meteorite-dark);
   }
 
   /* Responsive */

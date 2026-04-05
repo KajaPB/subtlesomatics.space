@@ -18,7 +18,11 @@ import Layout from '../layouts/Layout.astro';
       <div class="contact-form-wrapper">
         <h2>Get in Touch</h2>
         <p>I'd love to hear from you. Whether you have questions about the work, want to book a session, or simply feel drawn to connect — send me a message.</p>
-        <form class="contact-form" action="#" method="post">
+        <form class="contact-form" action="https://formsubmit.co/connect@subtlesomatics.space" method="POST">
+          <input type="hidden" name="_subject" value="New message from subtlesomatics.space" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://subtlesomatics.space/contact" />
+          <input type="text" name="_honey" style="display:none" />
           <div class="form-group">
             <label for="name">Your First Name</label>
             <input type="text" id="name" name="name" placeholder="Your name" />
@@ -31,7 +35,7 @@ import Layout from '../layouts/Layout.astro';
             <label for="message">Your Message <span class="required">*</span></label>
             <textarea id="message" name="message" rows="6" placeholder="What's alive for you right now?" required></textarea>
           </div>
-          <button type="submit" class="btn btn-filled">Submit Your Inquiry</button>
+          <button type="submit" class="btn btn-filled">Send Message</button>
         </form>
       </div>
       <div class="contact-info">
@@ -45,30 +49,19 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <div class="info-card">
           <h3>Sessions</h3>
-          <p>Online and in person</p>
-          <p class="info-sub">Available Mon–Fri</p>
+          <p>Online (Zoom) and in person</p>
+          <p class="info-sub">Vienna, Austria</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
+  <!-- Location -->
   <section class="section section-cream">
-    <h2 class="text-center">Client Feedback</h2>
-    <p class="section-subtitle text-center">Hear what our clients say about their transformative experiences.</p>
-    <div class="testimonials-grid">
-      <div class="testimonial">
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>"The coaching helped me connect deeply with my inner strength and peace."</blockquote>
-        <p class="testimonial-name">Sarah L.</p>
-        <p class="testimonial-location">New York</p>
-      </div>
-      <div class="testimonial">
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>"My sessions have brought profound clarity and balance to my life journey."</blockquote>
-        <p class="testimonial-name">John D.</p>
-        <p class="testimonial-location">Los Angeles</p>
-      </div>
+    <div class="location-content text-center">
+      <h2>Where to Find Me</h2>
+      <p>Sessions are available online (via Zoom) and in person in Vienna, Austria.</p>
+      <p>I'd love to have you and feel honoured to serve you — just where you are at this point in time.</p>
     </div>
   </section>
 
@@ -194,52 +187,18 @@ import Layout from '../layouts/Layout.astro';
     margin-top: 0.3rem;
   }
 
-  .section-subtitle {
-    color: var(--color-gray);
-    margin: 0.5rem auto 3rem;
-    font-size: 1rem;
-  }
-
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-    max-width: var(--max-width);
+  .location-content {
+    max-width: 600px;
     margin: 0 auto;
   }
 
-  .testimonial {
-    background: var(--color-light);
-    padding: 2.5rem;
-    border-radius: 2px;
-    box-shadow: 0 4px 20px rgba(31, 19, 70, 0.06);
-  }
-
-  .stars {
-    color: #ffcd35;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
-  }
-
-  .testimonial blockquote {
-    font-family: var(--font-heading);
-    font-size: 1.2rem;
-    font-style: italic;
-    color: var(--color-dark);
+  .location-content h2 {
     margin-bottom: 1.5rem;
-    line-height: 1.6;
   }
 
-  .testimonial-name {
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin-bottom: 0.2rem;
-  }
-
-  .testimonial-location {
-    color: var(--color-gray);
-    font-size: 0.85rem;
+  .location-content p {
+    margin: 0 auto 1rem;
+    color: var(--color-dark);
   }
 
   @media (max-width: 768px) {
@@ -250,10 +209,6 @@ import Layout from '../layouts/Layout.astro';
 
     .contact-info {
       margin-top: 0;
-    }
-
-    .testimonials-grid {
-      grid-template-columns: 1fr;
     }
   }
 </style>
