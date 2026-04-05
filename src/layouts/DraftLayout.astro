@@ -1,0 +1,237 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  activeNav?: string;
+}
+const { title, description = "Discover your innate resources through presence-based coaching and spinal energetics.", activeNav } = Astro.props;
+---
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="/draft/" class="nav-logo">Subtle Somatics</a>
+        <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <div class="nav-links">
+          <a href="/draft/" class:list={[{ active: activeNav === 'home' }]}>Home</a>
+          <a href="/draft/coaching" class:list={[{ active: activeNav === 'coaching' }]}>Coaching</a>
+          <a href="/draft/spinal-energetics" class:list={[{ active: activeNav === 'spinal' }]}>Spinal Energetics</a>
+          <a href="/draft/about" class:list={[{ active: activeNav === 'about' }]}>About</a>
+          <a href="/draft/#contact" class="nav-cta">Connect</a>
+        </div>
+      </div>
+    </nav>
+
+    <main><slot /></main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <h3>Subtle Somatics</h3>
+            <p class="tagline">Wholeness in progress</p>
+            <p class="footer-note">Humanenergetik acc. to WKO. Energetic support does not constitute medical treatment and does not replace medical diagnosis or treatment.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <a href="mailto:connect@subtlesomatics.space">connect@subtlesomatics.space</a>
+            <a href="https://www.instagram.com/subtlesomatics/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://wa.me/4368120713366" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+          <div class="footer-col">
+            <h4>Sessions</h4>
+            <p>Online (Zoom) &amp; in person</p>
+            <p>Vienna, Austria</p>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="/impressum">Impressum</a>
+            <a href="/datenschutz">Datenschutz</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Subtle Somatics. All rights reserved.</p>
+          <p class="draft-badge">Draft preview — not public</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.querySelector('.nav-toggle');
+      const links = document.querySelector('.nav-links');
+      toggle?.addEventListener('click', () => {
+        links?.classList.toggle('active');
+        toggle.classList.toggle('active');
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 300; font-display: swap; src: url('/fonts/cormorant-300.ttf') format('truetype'); }
+  @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 300; font-display: swap; src: url('/fonts/cormorant-300i.ttf') format('truetype'); }
+  @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/cormorant-400.ttf') format('truetype'); }
+  @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 400; font-display: swap; src: url('/fonts/cormorant-400i.ttf') format('truetype'); }
+  @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/cormorant-500.ttf') format('truetype'); }
+  @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 500; font-display: swap; src: url('/fonts/cormorant-500i.ttf') format('truetype'); }
+  @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/cormorant-600.ttf') format('truetype'); }
+  @font-face { font-family: 'Nunito Sans'; font-style: normal; font-weight: 300; font-display: swap; src: url('/fonts/nunito-300.ttf') format('truetype'); }
+  @font-face { font-family: 'Nunito Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/nunito-400.ttf') format('truetype'); }
+  @font-face { font-family: 'Nunito Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/nunito-600.ttf') format('truetype'); }
+
+  :root {
+    --bg-deep: #0d0d0f;
+    --bg-surface: #141418;
+    --bg-elevated: #1c1c22;
+    --bg-warm: #1a1816;
+    --text-primary: #e8e4df;
+    --text-secondary: #a09a92;
+    --text-muted: #6b665e;
+    --accent: #c4a46c;
+    --accent-light: #dbc291;
+    --accent-glow: rgba(196, 164, 108, 0.12);
+    --sage: #7a8c6e;
+    --sage-light: #95a886;
+    --sage-glow: rgba(122, 140, 110, 0.1);
+    --border: rgba(228, 220, 208, 0.08);
+    --border-hover: rgba(228, 220, 208, 0.15);
+    --font-heading: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Nunito Sans', 'Segoe UI', sans-serif;
+    --max-width: 1200px;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    font-weight: 300;
+    color: var(--text-primary);
+    line-height: 1.7;
+    background: var(--bg-deep);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--text-primary);
+  }
+  h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+  h2 { font-size: clamp(2rem, 4vw, 3rem); }
+  h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+  p { font-size: 1.05rem; max-width: 65ch; }
+  a { color: var(--accent); text-decoration: none; transition: color 0.3s; }
+  a:hover { color: var(--accent-light); }
+  img { max-width: 100%; height: auto; display: block; }
+
+  .section {
+    padding: 6rem 2rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  .section-surface { background: var(--bg-surface); }
+  .section-elevated { background: var(--bg-elevated); }
+  .section-warm { background: var(--bg-warm); }
+  .text-center { text-align: center; }
+
+  .btn {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: transparent;
+  }
+  .btn:hover { background: var(--accent); color: var(--bg-deep); }
+  .btn-filled { background: var(--accent); color: var(--bg-deep); }
+  .btn-filled:hover { background: var(--accent-light); border-color: var(--accent-light); }
+
+  /* Nav */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13, 13, 15, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: var(--max-width); margin: 0 auto;
+    padding: 1rem 2rem; display: flex;
+    align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: var(--font-heading); font-size: 1.5rem;
+    font-weight: 500; color: var(--text-primary); letter-spacing: 0.02em;
+  }
+  .nav-logo:hover { color: var(--accent); }
+  .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+  .nav-links a {
+    font-size: 0.85rem; font-weight: 400; color: var(--text-secondary);
+    letter-spacing: 0.06em; text-transform: uppercase;
+    position: relative; transition: color 0.3s;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -4px; left: 0;
+    width: 0; height: 1px; background: var(--accent); transition: width 0.3s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+  .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+  .nav-cta {
+    border: 1px solid var(--accent) !important;
+    padding: 0.4rem 1.2rem !important;
+    color: var(--accent) !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.1em !important;
+  }
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--accent) !important; color: var(--bg-deep) !important; }
+  .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 5px; }
+  .nav-toggle span { width: 24px; height: 1.5px; background: var(--text-primary); transition: all 0.3s; }
+
+  /* Footer */
+  .footer { background: var(--bg-surface); color: var(--text-secondary); padding: 4rem 2rem 2rem; border-top: 1px solid var(--border); }
+  .footer-inner { max-width: var(--max-width); margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
+  .footer h3 { font-size: 1.5rem; color: var(--text-primary); margin-bottom: 0.5rem; }
+  .footer .tagline { font-style: italic; color: var(--text-muted); font-size: 0.95rem; }
+  .footer-note { margin-top: 1rem; font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; max-width: 28ch; }
+  .footer h4 { font-family: var(--font-body); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  .footer-col a, .footer-col p { display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-secondary); }
+  .footer-col a:hover { color: var(--text-primary); }
+  .footer-bottom { padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: var(--text-muted); }
+  .draft-badge { background: var(--accent-glow); border: 1px solid var(--accent); color: var(--accent); padding: 0.2rem 0.8rem; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  @media (max-width: 768px) {
+    .nav-toggle { display: flex; }
+    .nav-links {
+      display: none; position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column; background: rgba(13,13,15,0.98);
+      padding: 1.5rem 2rem; gap: 1.5rem; border-bottom: 1px solid var(--border);
+    }
+    .nav-links.active { display: flex; }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+
+  *:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>

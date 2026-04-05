@@ -11,7 +11,7 @@ const { title, description = "Discover your innate resources through presence-ba
 const isDE = lang === 'de';
 
 const nav = isDE
-  ? { home: 'Start', services: 'Angebote', about: '\u00dcber mich', contact: 'Kontakt' }
+  ? { home: 'Start', services: 'Angebote', about: 'Über mich', contact: 'Kontakt' }
   : { home: 'Home', services: 'Services', about: 'About', contact: 'Contact' };
 
 const navUrls = isDE
@@ -54,7 +54,7 @@ const computedAltUrl = altLangUrl || (isDE ? '/' : '/de');
       "@type": "HealthAndBeautyBusiness",
       "name": "Subtle Somatics",
       "description": isDE
-        ? "Feinsp\u00fcrige K\u00f6rperarbeit in Wien. Spinal Energetics und pr\u00e4senzbasiertes Coaching mit Kaja Possert-Bienzle."
+        ? "Feinspürige Körperarbeit in Wien. Spinal Energetics und präsenzbasiertes Coaching mit Kaja Possert-Bienzle."
         : "Somatic bodywork in Vienna. Spinal Energetics and presence-based coaching with Kaja Possert-Bienzle.",
       "url": "https://subtlesomatics.space",
       "telephone": "+4368120713366",
@@ -74,7 +74,7 @@ const computedAltUrl = altLangUrl || (isDE ? '/' : '/de');
         { "@type": "Country", "name": "Austria" }
       ],
       "serviceType": ["Spinal Energetics", "Presence-Based Coaching", "Somatic Bodywork"],
-      "priceRange": "\u20ac130",
+      "priceRange": "€130",
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
@@ -113,13 +113,13 @@ const computedAltUrl = altLangUrl || (isDE ? '/' : '/de');
             <h3 class="footer-logo">Subtle Somatics</h3>
             <p class="footer-tagline">{footerText.tagline}</p>
             <p class="footer-disclaimer">{isDE
-              ? 'Humanenergetik gem. WKO. Energetische Hilfestellung stellt keine Heilbehandlung dar und ersetzt keine \u00e4rztliche Diagnose oder Behandlung.'
+              ? 'Humanenergetik gem. WKO. Energetische Hilfestellung stellt keine Heilbehandlung dar und ersetzt keine ärztliche Diagnose oder Behandlung.'
               : 'Humanenergetik acc. to WKO. Energetic support does not constitute medical treatment and does not replace medical diagnosis or treatment.'}</p>
           </div>
           <div class="footer-contact">
             <h4>{footerText.getInTouch}</h4>
             <a href="mailto:connect@subtlesomatics.space">connect@subtlesomatics.space</a>
-            <p class="footer-location">Wien / Vienna, {isDE ? '\u00d6sterreich' : 'Austria'}</p>
+            <p class="footer-location">Wien / Vienna, {isDE ? 'Österreich' : 'Austria'}</p>
           </div>
           <div class="footer-social">
             <h4>{footerText.stayInTouch}</h4>

@@ -1,0 +1,138 @@
+---
+import DraftLayout from '../../layouts/DraftLayout.astro';
+---
+<DraftLayout title="Subtle Coaching — Subtle Somatics" description="Presence-based coaching informed by Aletheia Coaching. Meet yourself where you are in life." activeNav="coaching">
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="eyebrow">Subtle Coaching</p>
+      <h1>An Unfolding Journey</h1>
+      <p>Meet yourself where you are in life — at the depth where you are vastly resourced to be with life's complexity.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="content-split">
+      <div class="content-image">
+        <img src="/images/subtle-coaching.png" alt="Subtle Coaching" />
+      </div>
+      <div class="content-text">
+        <h2>The art of subtle, almost invisible impulses</h2>
+        <p>Subtle Coaching is the art of initiating deep inner processes through subtle, almost invisible impulses. In a space of quiet presence and intuitive contact, transformation unfolds not through effort, but through the conscious allowing of what is already in flow.</p>
+        <p>Informed by <strong>Aletheia Coaching</strong>, this approach invites you into deep presence — a place where insights and direction arise from your inner truth, not external pressure. This is a path of attuning to the subtle rhythms of your being, discovering coherence, and stepping into the vast resources already within you.</p>
+        <p>This is not talk therapy — it's an experiential exploration of what is present right now: the sensations, emotions and subtle movements that reveal what is truest for you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-surface">
+    <div class="section" style="padding-top:4rem;padding-bottom:4rem;">
+      <h2 class="text-center" style="margin-bottom:3rem;">In Subtle Coaching, you may experience</h2>
+      <div class="experience-grid">
+        <div class="exp-card">
+          <h3>Meeting yourself</h3>
+          <p>Exactly where you are — with curiosity and tenderness — and discovering what becomes possible when you trust your own system's intelligence.</p>
+        </div>
+        <div class="exp-card">
+          <h3>Deepened access</h3>
+          <p>To innate qualities of strength, love, presence and more. Not as something new, but as something that was always there.</p>
+        </div>
+        <div class="exp-card">
+          <h3>Inner polarities</h3>
+          <p>Gently untangling — encountering the vast resources that live beneath the surface of habitual patterns.</p>
+        </div>
+        <div class="exp-card">
+          <h3>Coherence</h3>
+          <p>Alignment and embodiment of your innate wholeness — guidance to align with your essence rather than imposed expectations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="format-grid">
+      <div class="format-card">
+        <h3>1:1 Coaching</h3>
+        <p>Personalized sessions tailored to your unique process — online or in person.</p>
+        <p class="format-detail">~60 min · €130</p>
+      </div>
+      <div class="format-card">
+        <h3>Group Journeys</h3>
+        <p>Collective unfolding with shared resonance — exploring together in community.</p>
+        <p class="format-detail">Coming soon</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-surface">
+    <div class="section" style="padding-top:4rem;padding-bottom:4rem;">
+      <h2 class="text-center" style="margin-bottom:3rem;">Questions about Coaching</h2>
+      <div class="faq-container">
+        <details class="faq-item">
+          <summary>What is subtle coaching for?</summary>
+          <p>For life transitions, cultivating presence, aligning with what matters most, and embodying resourcefulness. It is less about striving and more about allowing your truth to emerge.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How is this different from therapy?</summary>
+          <p>Therapy often focuses on resolving past wounds. Subtle Coaching is present- and future-oriented, supporting clarity, aliveness, and integration while respecting your wholeness.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How many sessions do I need?</summary>
+          <p>Some shifts may be felt in a single session, while deeper integration unfolds over several. Many clients choose an ongoing rhythm of sessions to support sustained transformation.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Who is this for?</summary>
+          <p>People in transition, those seeking clarity, or those longing to live attuned to life's flow. It's for anyone ready to meet themselves more deeply and move from that place.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section text-center">
+    <h2>Ready to explore?</h2>
+    <p style="margin:1rem auto 2rem;color:var(--text-secondary);">A free discovery call is the first step — no commitment, just connection.</p>
+    <a href="/draft/#contact" class="btn btn-filled">Book a Discovery Call</a>
+  </section>
+
+</DraftLayout>
+
+<style>
+  .page-hero { background: var(--bg-surface); padding: 10rem 2rem 6rem; text-align: center; border-bottom: 1px solid var(--border); }
+  .page-hero-inner { max-width: 700px; margin: 0 auto; }
+  .page-hero h1 { margin-bottom: 1.5rem; }
+  .page-hero p { color: var(--text-secondary); font-size: 1.15rem; margin: 0 auto; }
+  .eyebrow { font-family: var(--font-body); font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
+
+  .content-split { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: center; }
+  .content-image img { border-radius: 2px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+  .content-text h2 { margin-bottom: 1.5rem; }
+  .content-text p { margin-bottom: 1.2rem; color: var(--text-secondary); }
+  .content-text strong { color: var(--text-primary); font-weight: 400; }
+
+  .experience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 900px; margin: 0 auto; }
+  .exp-card { padding: 2rem; border: 1px solid var(--border); }
+  .exp-card h3 { font-style: italic; color: var(--accent); margin-bottom: 0.8rem; font-size: 1.3rem; }
+  .exp-card p { color: var(--text-secondary); font-size: 0.95rem; }
+
+  .format-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 700px; margin: 0 auto; }
+  .format-card { padding: 2rem; border: 1px solid var(--border); text-align: center; }
+  .format-card h3 { margin-bottom: 0.8rem; }
+  .format-card p { color: var(--text-secondary); font-size: 0.95rem; margin: 0 auto; }
+  .format-detail { font-size: 0.8rem !important; color: var(--accent) !important; margin-top: 1rem !important; letter-spacing: 0.06em; text-transform: uppercase; }
+
+  .faq-container { max-width: 700px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-item summary { padding: 1.25rem 0; font-family: var(--font-heading); font-size: 1.2rem; color: var(--text-primary); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: '+'; font-size: 1.5rem; font-weight: 300; color: var(--accent); flex-shrink: 0; margin-left: 1rem; }
+  .faq-item[open] summary::after { content: '\2212'; }
+  .faq-item summary:hover { color: var(--accent); }
+  .faq-item p { padding: 0 0 1.5rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; max-width: none; }
+
+  @media (max-width: 768px) {
+    .content-split { grid-template-columns: 1fr; gap: 2rem; }
+    .content-image { max-width: 400px; margin: 0 auto; }
+    .experience-grid, .format-grid { grid-template-columns: 1fr; }
+  }
+</style>
