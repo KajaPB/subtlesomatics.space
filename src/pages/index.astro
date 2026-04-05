@@ -1,0 +1,356 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Subtle Somatics: Mind-Body Connection and Energetic Coaching" description="Discover your innate resources through presence-based coaching and spinal energetics.">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="/images/hero.jpg" alt="Kaja — Subtle Somatics" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-intro">I'm inviting you&hellip;</p>
+      <div class="hero-lines">
+        <p><em>to align</em> <span>with the free-flowing rhythm of your essence</span></p>
+        <p><em>to unfold</em> <span>the luminous wonder of deeper aliveness</span></p>
+        <p><em>to embody</em> <span>the radiant expression of your unique creativity, love and power</span></p>
+      </div>
+      <a href="#offer" class="btn">Discover more</a>
+    </div>
+  </section>
+
+  <!-- About Kaja -->
+  <section class="about-intro section">
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="/images/kaja-profile.jpg" alt="Kaja Possert-Bienzle" />
+      </div>
+      <div class="about-text">
+        <h2>Hi! I'm Kaja Possert-Bienzle.</h2>
+        <p class="about-role">Unfolding companion, wholeness witnesser and integration facilitator, committed to the intricate art of unfolding what's alive and true.</p>
+        <p>I work with the natural intelligence of your body-mind-soul system where sensations begin to speak, energy reorganises from the depth and something deeply resonant in you starts moving through silent presence.</p>
+        <p>This work is not about fixing or striving — it's about entering the field where what's true begins to reveal itself, in its own rhythm and time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offerings -->
+  <section class="offerings section-dark" id="offer">
+    <div class="offerings-inner">
+      <h2 class="text-center">What I offer</h2>
+      <div class="offerings-grid">
+        <div class="offering-card">
+          <h3>An encounter</h3>
+          <p>Truly getting to know the thoughts, emotions and sensations you have moment to moment.</p>
+        </div>
+        <div class="offering-card">
+          <h3>An unfolding</h3>
+          <p>Experiencing your vast inner resourcefulness — in the form of strength, love, presence and more.</p>
+        </div>
+        <div class="offering-card">
+          <h3>An integration</h3>
+          <p>Connecting into deeper coherence, alignment and embodiment of your innate wholeness.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services-preview section">
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-image">
+          <img src="/images/subtle-coaching.png" alt="Subtle Coaching" />
+        </div>
+        <div class="service-content">
+          <h3>Subtle Coaching</h3>
+          <p>Meet yourself where you are in life right now — at the depth where you are vastly resourced to be with life's complexity.</p>
+          <p class="service-sub">Embody your profound innate qualities through deepening self-contact.</p>
+          <a href="/services" class="btn">Learn more</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-image">
+          <img src="/images/spinal-energetics.png" alt="Spinal Energetics" />
+        </div>
+        <div class="service-content">
+          <h3>Spinal Energetics</h3>
+          <p>Experience profound mind-body-soul connection and integration — supported by subtle-and-powerful touch and sound.</p>
+          <p class="service-sub">Experience profound integration with a subtle and powerful somatic modality.</p>
+          <a href="/services" class="btn">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Second Image Section -->
+  <section class="image-break">
+    <img src="/images/kaja-secondary.png" alt="Kaja — presence and embodiment" />
+    <div class="image-break-overlay"></div>
+  </section>
+
+</Layout>
+
+<style>
+  /* Hero */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(31, 19, 70, 0.3) 0%,
+      rgba(31, 19, 70, 0.5) 50%,
+      rgba(31, 19, 70, 0.7) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: var(--color-light);
+    padding: 2rem;
+    max-width: 800px;
+    margin-top: 4rem;
+  }
+
+  .hero-intro {
+    font-family: var(--font-heading);
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-style: italic;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+  }
+
+  .hero-lines {
+    margin-bottom: 3rem;
+  }
+
+  .hero-lines p {
+    font-family: var(--font-heading);
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+    max-width: none;
+  }
+
+  .hero-lines em {
+    font-weight: 500;
+    font-size: 1.1em;
+    display: block;
+    color: var(--color-primary-light);
+    margin-bottom: 0.2rem;
+  }
+
+  .hero-lines span {
+    opacity: 0.9;
+  }
+
+  .hero .btn {
+    border-color: var(--color-light);
+    color: var(--color-light);
+    margin-top: 1rem;
+  }
+
+  .hero .btn:hover {
+    background: var(--color-light);
+    color: var(--color-meteorite-dark);
+  }
+
+  /* About Intro */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .about-image img {
+    border-radius: 2px;
+    box-shadow: 0 20px 60px rgba(31, 19, 70, 0.1);
+  }
+
+  .about-text h2 {
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  }
+
+  .about-role {
+    font-style: italic;
+    color: var(--color-gray);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .about-text p {
+    margin-bottom: 1.2rem;
+    color: var(--color-dark);
+  }
+
+  /* Offerings */
+  .offerings {
+    padding: 6rem 2rem;
+  }
+
+  .offerings-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .offerings h2 {
+    margin-bottom: 4rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+
+  .offerings-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .offering-card {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .offering-card h3 {
+    color: var(--color-primary-light);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-style: italic;
+  }
+
+  .offering-card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+    margin: 0 auto;
+  }
+
+  /* Services Preview */
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .service-card {
+    background: var(--color-cream);
+    overflow: hidden;
+    border-radius: 2px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(31, 19, 70, 0.1);
+  }
+
+  .service-image img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+  }
+
+  .service-content {
+    padding: 2rem;
+  }
+
+  .service-content h3 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+
+  .service-content p {
+    margin-bottom: 1rem;
+    color: var(--color-dark);
+    font-size: 0.95rem;
+  }
+
+  .service-sub {
+    font-style: italic;
+    color: var(--color-gray) !important;
+    font-size: 0.9rem !important;
+  }
+
+  .service-content .btn {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+  }
+
+  /* Image Break */
+  .image-break {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+  }
+
+  .image-break img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .image-break-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(31, 19, 70, 0.1) 0%,
+      rgba(31, 19, 70, 0.2) 100%
+    );
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .about-image {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .offerings-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+      padding: 1.5rem;
+    }
+
+    .image-break {
+      height: 40vh;
+    }
+  }
+</style>

@@ -1,0 +1,224 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About — Subtle Somatics" description="Connecting you to your innate resources through somatic coaching and energetic modalities for deeper self-awareness and growth.">
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <h1>Empower Your Presence</h1>
+      <p>Connecting you to your innate resources through somatic coaching and energetic modalities for deeper self-awareness and growth.</p>
+    </div>
+  </section>
+
+  <!-- Mind-Body Connection -->
+  <section class="section">
+    <div class="content-split">
+      <div class="content-text">
+        <h2>Mind-Body Connection</h2>
+        <p>Fostering innate qualities through presence-based coaching and somatic work.</p>
+        <p>I believe that within each person lies a vast reservoir of innate resources — strength, courage, compassion, trust, and peace. These qualities are not something to be acquired from outside, but something to be uncovered, remembered, and embodied from within.</p>
+        <p>My approach draws on the wisdom of the body-mind-soul system, working with the natural intelligence that already knows how to heal, integrate, and align. Through gentle presence and deep listening, we create the conditions for what is most alive and true in you to emerge.</p>
+      </div>
+      <div class="content-image">
+        <img src="/images/kaja-profile.jpg" alt="Kaja Possert-Bienzle" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey -->
+  <section class="section section-cream">
+    <div class="journey-content text-center">
+      <h2>The Journey</h2>
+      <p>My path into this work has been one of deep personal unfolding — a journey through the layers of conditioning, protection, and habitual patterns toward something more authentic, more alive, more whole.</p>
+      <p>This lived experience is the foundation of my practice. I don't guide from theory alone, but from a place of having walked — and continuing to walk — the path of embodied transformation.</p>
+      <p>Every session I offer is an invitation to meet yourself where you are, with curiosity and tenderness, and to discover what becomes possible when you trust the intelligence of your own system.</p>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="section">
+    <div class="values-grid">
+      <div class="value-card">
+        <h3>Presence</h3>
+        <p>Being fully here — with what is. Not fixing, not striving, but meeting the moment with open awareness.</p>
+      </div>
+      <div class="value-card">
+        <h3>Wholeness</h3>
+        <p>Recognising that you are already whole. Our work is about removing the layers that obscure this truth.</p>
+      </div>
+      <div class="value-card">
+        <h3>Embodiment</h3>
+        <p>Living from the body's wisdom, not just the mind's understanding. True knowing happens in the tissues, the breath, the bones.</p>
+      </div>
+      <div class="value-card">
+        <h3>Trust</h3>
+        <p>Trusting the rhythm of your own unfolding. There is an intelligence at work in you that knows the way.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section section-cream">
+    <h2 class="text-center">Client Feedback</h2>
+    <p class="section-subtitle text-center">Hear from those who transformed through our coaching and somatic work.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Subtle Somatics helped me reconnect with my inner strength and peace."</blockquote>
+        <p class="testimonial-name">Emily Johnson</p>
+        <p class="testimonial-location">San Francisco</p>
+      </div>
+      <div class="testimonial">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"The coaching sessions were transformative, allowing me to access deeper layers of trust and compassion within myself. Highly recommend this journey of self-discovery."</blockquote>
+        <p class="testimonial-name">Michael Lee</p>
+        <p class="testimonial-location">New York</p>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero {
+    background: var(--color-meteorite-dark);
+    color: var(--color-light);
+    padding: 10rem 2rem 6rem;
+    text-align: center;
+  }
+
+  .page-hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .page-hero h1 {
+    color: var(--color-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .page-hero p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.15rem;
+    margin: 0 auto;
+  }
+
+  .content-split {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .content-text h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .content-text p {
+    margin-bottom: 1.2rem;
+    color: var(--color-dark);
+  }
+
+  .content-image img {
+    border-radius: 2px;
+    box-shadow: 0 20px 60px rgba(31, 19, 70, 0.1);
+  }
+
+  .journey-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .journey-content h2 {
+    margin-bottom: 2rem;
+  }
+
+  .journey-content p {
+    margin: 0 auto 1.5rem;
+    color: var(--color-dark);
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .value-card {
+    padding: 2rem;
+    border-left: 3px solid var(--color-primary-light);
+  }
+
+  .value-card h3 {
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: var(--color-meteorite);
+  }
+
+  .value-card p {
+    color: var(--color-dark);
+    font-size: 0.95rem;
+  }
+
+  .section-subtitle {
+    color: var(--color-gray);
+    margin: 0.5rem auto 3rem;
+    font-size: 1rem;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .testimonial {
+    background: var(--color-light);
+    padding: 2.5rem;
+    border-radius: 2px;
+    box-shadow: 0 4px 20px rgba(31, 19, 70, 0.06);
+  }
+
+  .stars {
+    color: #ffcd35;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .testimonial blockquote {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--color-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .testimonial-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .testimonial-location {
+    color: var(--color-gray);
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 768px) {
+    .content-split {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .values-grid,
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

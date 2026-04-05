@@ -1,0 +1,271 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Services — Subtle Somatics" description="Connect with your innate resources through presence-based coaching and energetic somatic modalities for deeper healing.">
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <h1>Somatic Coaching Services</h1>
+      <p>Connect with your innate resources through presence-based coaching and energetic somatic modalities for deeper healing.</p>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="section">
+    <div class="services-overview">
+      <div class="service-full">
+        <div class="service-full-image">
+          <img src="/images/subtle-coaching.png" alt="Subtle Coaching" />
+        </div>
+        <div class="service-full-content">
+          <h2>Presence-Based Coaching</h2>
+          <p>Foster your mind-body connection and access your innate qualities of strength, courage, and compassion.</p>
+          <p>In presence-based coaching, we work with the alive, moment-to-moment experience of your body-mind-soul system. This is not talk therapy — it's an experiential exploration of what is present right now: the sensations, emotions, and subtle movements that reveal what is most true for you.</p>
+          <p>Through deepening self-contact and gentle inquiry, you begin to encounter the vast resources that live beneath the surface of your habitual patterns. Qualities like courage, tenderness, clarity, and inner strength start to emerge — not as something new, but as something that was always there, waiting to be met.</p>
+          <ul>
+            <li>Deepen your connection to the present moment</li>
+            <li>Access innate qualities of strength, love, and presence</li>
+            <li>Work with thoughts, emotions, and sensations as doorways</li>
+            <li>Cultivate self-contact and inner resourcefulness</li>
+          </ul>
+          <a href="/contact" class="btn">Book a session</a>
+        </div>
+      </div>
+
+      <div class="service-full reverse">
+        <div class="service-full-image">
+          <img src="/images/spinal-energetics.png" alt="Spinal Energetics" />
+        </div>
+        <div class="service-full-content">
+          <h2>Spinal Energetics</h2>
+          <p>Experience a unique somatic energetic modality that promotes integration, warmth, and balance in your life.</p>
+          <p>Spinal Energetics is a profound modality that works with the spine as a gateway to the body's energetic, emotional, and physical layers. Through subtle and powerful touch, combined with sound and presence, the body's own intelligence is invited to reorganise, release, and integrate.</p>
+          <p>Sessions often involve gentle contact along the spine, allowing stored tension, emotion, and energy to move and transform. Many people experience deep states of connection, warmth, and aliveness — as the body finds its way back toward coherence and wholeness.</p>
+          <ul>
+            <li>Experience profound mind-body-soul integration</li>
+            <li>Release stored tension and emotional patterns</li>
+            <li>Reconnect with your body's natural intelligence</li>
+            <li>Cultivate inner warmth, balance, and aliveness</li>
+          </ul>
+          <a href="/contact" class="btn">Book a session</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transformative Sessions -->
+  <section class="section section-dark">
+    <div class="transform-inner text-center">
+      <h2>Transformative Somatic Sessions</h2>
+      <p>Engage in sessions that deepen your connection to peace, trust, and your inner resources.</p>
+      <div class="transform-grid">
+        <div class="transform-card">
+          <h3>Individual Sessions</h3>
+          <p>One-on-one sessions tailored to your unique process. Whether you are drawn to presence-based coaching, spinal energetics, or a blend of both, each session meets you exactly where you are.</p>
+        </div>
+        <div class="transform-card">
+          <h3>Discovery Call</h3>
+          <p>A free introductory conversation to explore whether this work resonates with you. We'll connect, I'll listen to what's alive for you, and together we'll sense into the right next step.</p>
+        </div>
+        <div class="transform-card">
+          <h3>Series of Sessions</h3>
+          <p>Deeper transformation unfolds over time. A series of sessions allows for sustained exploration, integration, and the gradual embodiment of your innate wholeness.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <h2 class="text-center">Client Experiences</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"This work has transformed my connection to myself, revealing strength and peace I never knew existed."</blockquote>
+        <p class="testimonial-name">Emily R.</p>
+      </div>
+      <div class="testimonial">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"The presence-based coaching helped me access my inner courage and compassion in profound ways."</blockquote>
+        <p class="testimonial-name">James T.</p>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero {
+    background: var(--color-meteorite-dark);
+    color: var(--color-light);
+    padding: 10rem 2rem 6rem;
+    text-align: center;
+  }
+
+  .page-hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .page-hero h1 {
+    color: var(--color-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .page-hero p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.15rem;
+    margin: 0 auto;
+  }
+
+  .service-full {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 6rem;
+  }
+
+  .service-full.reverse {
+    grid-template-columns: 1.5fr 1fr;
+    margin-bottom: 0;
+  }
+
+  .service-full.reverse .service-full-image {
+    order: 2;
+  }
+
+  .service-full-image img {
+    border-radius: 2px;
+    box-shadow: 0 20px 60px rgba(31, 19, 70, 0.1);
+    width: 100%;
+  }
+
+  .service-full-content h2 {
+    margin-bottom: 1rem;
+  }
+
+  .service-full-content p {
+    margin-bottom: 1.2rem;
+    color: var(--color-dark);
+  }
+
+  .service-full-content ul {
+    list-style: none;
+    margin: 1.5rem 0 2rem;
+    padding: 0;
+  }
+
+  .service-full-content li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--color-dark);
+    font-size: 0.95rem;
+  }
+
+  .service-full-content li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary-light);
+  }
+
+  .transform-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 6rem 2rem;
+  }
+
+  .section-dark .transform-inner {
+    padding: 0;
+  }
+
+  .transform-inner h2 {
+    margin-bottom: 1rem;
+  }
+
+  .transform-inner > p {
+    margin: 0 auto 3rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .transform-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .transform-card {
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    text-align: left;
+  }
+
+  .transform-card h3 {
+    color: var(--color-primary-light);
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  .transform-card p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    max-width: var(--max-width);
+    margin: 2rem auto 0;
+  }
+
+  .testimonial {
+    background: var(--color-cream);
+    padding: 2.5rem;
+    border-radius: 2px;
+  }
+
+  .stars {
+    color: #ffcd35;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .testimonial blockquote {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--color-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .testimonial-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .service-full,
+    .service-full.reverse {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .service-full.reverse .service-full-image {
+      order: 0;
+    }
+
+    .transform-grid,
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
