@@ -6,17 +6,17 @@ import DraftLayout from '../../layouts/DraftLayout.astro';
   <section class="page-hero">
     <div class="page-hero-inner">
       <p class="eyebrow">Subtle Coaching</p>
-      <h1>An Unfolding Journey</h1>
-      <p>Meet yourself where you are in life — at the depth where you are vastly resourced to be with life's complexity.</p>
+      <h1 class="reveal">An Unfolding Journey</h1>
+      <p class="reveal" data-delay="100">Meet yourself where you are in life — at the depth where you are vastly resourced to be with life's complexity.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="content-split">
-      <div class="content-image">
+      <div class="content-image reveal-left">
         <img src="/images/subtle-coaching.png" alt="Subtle Coaching" />
       </div>
-      <div class="content-text">
+      <div class="content-text reveal-right">
         <h2>The art of subtle, almost invisible impulses</h2>
         <p>Subtle Coaching is the art of initiating deep inner processes through subtle, almost invisible impulses. In a space of quiet presence and intuitive contact, transformation unfolds not through effort, but through the conscious allowing of what is already in flow.</p>
         <p>Informed by <strong>Aletheia Coaching</strong>, this approach invites you into deep presence — a place where insights and direction arise from your inner truth, not external pressure. This is a path of attuning to the subtle rhythms of your being, discovering coherence, and stepping into the vast resources already within you.</p>
@@ -25,23 +25,44 @@ import DraftLayout from '../../layouts/DraftLayout.astro';
     </div>
   </section>
 
+  <!-- Core Principles -->
+  <section class="section-warm">
+    <div class="section" style="padding-top:4rem;padding-bottom:4rem;">
+      <h2 class="text-center reveal" style="margin-bottom:3rem;">Core Principles</h2>
+      <div class="principles-grid">
+        <div class="principle-card reveal" data-delay="0">
+          <h3>Steadiness</h3>
+          <p>Being a solid presence in your journey — unwavering, grounded, and fully here. You can lean into this steadiness as we explore what unfolds.</p>
+        </div>
+        <div class="principle-card reveal" data-delay="150">
+          <h3>Unfolding</h3>
+          <p>Allowing life to emerge without forcing — trusting the natural rhythm of your process and the intelligence that guides it from within.</p>
+        </div>
+        <div class="principle-card reveal" data-delay="300">
+          <h3>Clarity & Attunement</h3>
+          <p>Seeing with discernment and love — attuning to what is present beneath the surface, with precision and deep care.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section-surface">
     <div class="section" style="padding-top:4rem;padding-bottom:4rem;">
-      <h2 class="text-center" style="margin-bottom:3rem;">In Subtle Coaching, you may experience</h2>
+      <h2 class="text-center reveal" style="margin-bottom:3rem;">In Subtle Coaching, you may experience</h2>
       <div class="experience-grid">
-        <div class="exp-card">
+        <div class="exp-card card-shine reveal" data-delay="0">
           <h3>Meeting yourself</h3>
           <p>Exactly where you are — with curiosity and tenderness — and discovering what becomes possible when you trust your own system's intelligence.</p>
         </div>
-        <div class="exp-card">
+        <div class="exp-card card-shine reveal" data-delay="100">
           <h3>Deepened access</h3>
           <p>To innate qualities of strength, love, presence and more. Not as something new, but as something that was always there.</p>
         </div>
-        <div class="exp-card">
+        <div class="exp-card card-shine reveal" data-delay="200">
           <h3>Inner polarities</h3>
           <p>Gently untangling — encountering the vast resources that live beneath the surface of habitual patterns.</p>
         </div>
-        <div class="exp-card">
+        <div class="exp-card card-shine reveal" data-delay="300">
           <h3>Coherence</h3>
           <p>Alignment and embodiment of your innate wholeness — guidance to align with your essence rather than imposed expectations.</p>
         </div>
@@ -49,17 +70,27 @@ import DraftLayout from '../../layouts/DraftLayout.astro';
     </div>
   </section>
 
+  <!-- Who is this for? -->
   <section class="section">
-    <div class="format-grid">
-      <div class="format-card">
-        <h3>1:1 Coaching</h3>
-        <p>Personalized sessions tailored to your unique process — online or in person.</p>
-        <p class="format-detail">~60 min · €130</p>
-      </div>
-      <div class="format-card">
-        <h3>Group Journeys</h3>
-        <p>Collective unfolding with shared resonance — exploring together in community.</p>
-        <p class="format-detail">Coming soon</p>
+    <div class="who-section reveal">
+      <h2 class="text-center">Who is this for?</h2>
+      <p class="who-text">People in transition, those seeking clarity, or those longing to live attuned to life's flow. It's for anyone ready to meet themselves more deeply and move from that place.</p>
+    </div>
+  </section>
+
+  <section class="section-surface">
+    <div class="section" style="padding-top:4rem;padding-bottom:4rem;">
+      <div class="format-grid reveal">
+        <div class="format-card card-shine">
+          <h3>1:1 Coaching</h3>
+          <p>Personalized sessions tailored to your unique process — online or in person.</p>
+          <p class="format-detail">~60 min &middot; &euro;130</p>
+        </div>
+        <div class="format-card card-shine">
+          <h3>Group Journeys</h3>
+          <p>Collective unfolding with shared resonance — exploring together in community.</p>
+          <p class="format-detail">Coming soon</p>
+        </div>
       </div>
     </div>
   </section>
@@ -67,8 +98,8 @@ import DraftLayout from '../../layouts/DraftLayout.astro';
   <!-- FAQ -->
   <section class="section-surface">
     <div class="section" style="padding-top:4rem;padding-bottom:4rem;">
-      <h2 class="text-center" style="margin-bottom:3rem;">Questions about Coaching</h2>
-      <div class="faq-container">
+      <h2 class="text-center reveal" style="margin-bottom:3rem;">Questions about Coaching</h2>
+      <div class="faq-container reveal" data-delay="150">
         <details class="faq-item">
           <summary>What is subtle coaching for?</summary>
           <p>For life transitions, cultivating presence, aligning with what matters most, and embodying resourcefulness. It is less about striving and more about allowing your truth to emerge.</p>
@@ -89,10 +120,16 @@ import DraftLayout from '../../layouts/DraftLayout.astro';
     </div>
   </section>
 
-  <section class="section text-center">
-    <h2>Ready to explore?</h2>
-    <p style="margin:1rem auto 2rem;color:var(--text-secondary);">A free discovery call is the first step — no commitment, just connection.</p>
-    <a href="/draft/#contact" class="btn btn-filled">Book a Discovery Call</a>
+  <!-- Booking -->
+  <section class="section booking-section">
+    <div class="booking-inner reveal">
+      <p class="eyebrow text-center">Take the first step</p>
+      <h2 class="text-center">Ready to explore?</h2>
+      <p class="text-center booking-sub">A free discovery call is the first step — no commitment, just connection.</p>
+      <div class="cal-embed-wrapper">
+        <iframe src="https://cal.com/subtlesomatics/discovery" style="width:100%;height:700px;border:none;" loading="lazy" title="Book a discovery call with Subtle Somatics"></iframe>
+      </div>
+    </div>
   </section>
 
 </DraftLayout>
@@ -110,10 +147,37 @@ import DraftLayout from '../../layouts/DraftLayout.astro';
   .content-text p { margin-bottom: 1.2rem; color: var(--text-secondary); }
   .content-text strong { color: var(--text-primary); font-weight: 400; }
 
+  /* Core Principles */
+  .principles-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+    max-width: 1000px; margin: 0 auto;
+  }
+  .principle-card {
+    padding: 2rem;
+    border-left: 3px solid var(--accent);
+    background: rgba(196, 164, 108, 0.03);
+  }
+  .principle-card h3 {
+    font-style: italic; color: var(--accent); margin-bottom: 1rem; font-size: 1.3rem;
+  }
+  .principle-card p { color: var(--text-secondary); font-size: 0.95rem; }
+
   .experience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 900px; margin: 0 auto; }
   .exp-card { padding: 2rem; border: 1px solid var(--border); }
   .exp-card h3 { font-style: italic; color: var(--accent); margin-bottom: 0.8rem; font-size: 1.3rem; }
   .exp-card p { color: var(--text-secondary); font-size: 0.95rem; }
+
+  /* Who is this for */
+  .who-section { max-width: 700px; margin: 0 auto; text-align: center; }
+  .who-section h2 { margin-bottom: 1.5rem; }
+  .who-text {
+    font-family: var(--font-heading);
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: none;
+  }
 
   .format-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 700px; margin: 0 auto; }
   .format-card { padding: 2rem; border: 1px solid var(--border); text-align: center; }
@@ -130,9 +194,20 @@ import DraftLayout from '../../layouts/DraftLayout.astro';
   .faq-item summary:hover { color: var(--accent); }
   .faq-item p { padding: 0 0 1.5rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; max-width: none; }
 
+  /* Booking */
+  .booking-section { border-top: 1px solid var(--border); }
+  .booking-inner { max-width: 900px; margin: 0 auto; }
+  .booking-sub { color: var(--text-secondary); margin: 1rem auto 2.5rem; }
+  .cal-embed-wrapper {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--bg-elevated);
+  }
+
   @media (max-width: 768px) {
     .content-split { grid-template-columns: 1fr; gap: 2rem; }
     .content-image { max-width: 400px; margin: 0 auto; }
-    .experience-grid, .format-grid { grid-template-columns: 1fr; }
+    .experience-grid, .format-grid, .principles-grid { grid-template-columns: 1fr; }
   }
 </style>

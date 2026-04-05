@@ -3,8 +3,9 @@ interface Props {
   title: string;
   description?: string;
   activeNav?: string;
+  hasHero?: boolean;
 }
-const { title, description = "Discover your innate resources through presence-based coaching and spinal energetics.", activeNav } = Astro.props;
+const { title, description = "Discover your innate resources through presence-based coaching and spinal energetics.", activeNav, hasHero = false } = Astro.props;
 ---
 <!doctype html>
 <html lang="en" class="dark">
@@ -16,24 +17,35 @@ const { title, description = "Discover your innate resources through presence-ba
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
-  <body>
-    <nav class="nav">
+  <body data-has-hero={hasHero ? "true" : "false"}>
+    <nav class="nav" id="main-nav">
       <div class="nav-inner">
         <a href="/draft/" class="nav-logo">Subtle Somatics</a>
-        <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-        <div class="nav-links">
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <div class="nav-links" id="nav-links">
           <a href="/draft/" class:list={[{ active: activeNav === 'home' }]}>Home</a>
           <a href="/draft/coaching" class:list={[{ active: activeNav === 'coaching' }]}>Coaching</a>
           <a href="/draft/spinal-energetics" class:list={[{ active: activeNav === 'spinal' }]}>Spinal Energetics</a>
           <a href="/draft/about" class:list={[{ active: activeNav === 'about' }]}>About</a>
+          <a href="/draft/writings" class:list={[{ active: activeNav === 'writings' }]}>Writings</a>
           <a href="/draft/#contact" class="nav-cta">Connect</a>
         </div>
       </div>
+      <!-- Mobile overlay -->
+      <div class="nav-overlay" id="nav-overlay"></div>
     </nav>
 
     <main><slot /></main>
 
+    <!-- Back to top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 12 10 7 5 12"></polyline>
+      </svg>
+    </button>
+
     <footer class="footer">
+      <div class="footer-gradient"></div>
       <div class="footer-inner">
         <div class="footer-top">
           <div class="footer-brand">
@@ -66,12 +78,91 @@ const { title, description = "Discover your innate resources through presence-ba
     </footer>
 
     <script>
+      // --- Mobile nav ---
       const toggle = document.querySelector('.nav-toggle');
-      const links = document.querySelector('.nav-links');
+      const links = document.getElementById('nav-links');
+      const overlay = document.getElementById('nav-overlay');
+
+      function openMobileNav() {
+        links?.classList.add('active');
+        toggle?.classList.add('active');
+        toggle?.setAttribute('aria-expanded', 'true');
+        overlay?.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMobileNav() {
+        links?.classList.remove('active');
+        toggle?.classList.remove('active');
+        toggle?.setAttribute('aria-expanded', 'false');
+        overlay?.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
       toggle?.addEventListener('click', () => {
-        links?.classList.toggle('active');
-        toggle.classList.toggle('active');
+        const isOpen = links?.classList.contains('active');
+        if (isOpen) closeMobileNav();
+        else openMobileNav();
       });
+      overlay?.addEventListener('click', closeMobileNav);
+      // Close mobile nav on link click
+      links?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileNav));
+
+      // --- Nav scroll behavior ---
+      const nav = document.getElementById('main-nav');
+      const hasHero = document.body.dataset.hasHero === 'true';
+
+      function updateNav() {
+        if (!nav) return;
+        const scrolled = window.scrollY > 80;
+        if (hasHero) {
+          nav.classList.toggle('nav-scrolled', scrolled);
+        } else {
+          // Always solid on non-hero pages
+          nav.classList.add('nav-scrolled');
+        }
+      }
+      updateNav();
+      window.addEventListener('scroll', updateNav, { passive: true });
+
+      // --- Back to top ---
+      const btt = document.getElementById('back-to-top');
+      function updateBtt() {
+        if (!btt) return;
+        btt.classList.toggle('visible', window.scrollY > 500);
+      }
+      updateBtt();
+      window.addEventListener('scroll', updateBtt, { passive: true });
+      btt?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      // --- Scroll reveal ---
+      const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+      if (revealElements.length > 0) {
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const delay = parseInt(entry.target.dataset.delay || '0', 10);
+              setTimeout(() => {
+                entry.target.classList.add('revealed');
+              }, delay);
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        revealElements.forEach(el => revealObserver.observe(el));
+      }
+
+      // --- Parallax hero background ---
+      const heroImg = document.querySelector('.hero-bg img');
+      if (heroImg) {
+        function parallax() {
+          const scrollY = window.scrollY;
+          const heroHeight = (heroImg as HTMLElement).closest('.hero')?.getBoundingClientRect().height || 0;
+          if (scrollY < heroHeight) {
+            (heroImg as HTMLElement).style.transform = `translateY(${scrollY * 0.35}px) scale(1.1)`;
+          }
+        }
+        window.addEventListener('scroll', parallax, { passive: true });
+      }
     </script>
   </body>
 </html>
@@ -110,7 +201,7 @@ const { title, description = "Discover your innate resources through presence-ba
   }
 
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 
   body {
     font-family: var(--font-body);
@@ -163,12 +254,62 @@ const { title, description = "Discover your innate resources through presence-ba
   .btn-filled { background: var(--accent); color: var(--bg-deep); }
   .btn-filled:hover { background: var(--accent-light); border-color: var(--accent-light); }
 
-  /* Nav */
+  /* ===== Scroll Reveal System ===== */
+  .reveal, .reveal-left, .reveal-right {
+    opacity: 0;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal { transform: translateY(30px); }
+  .reveal-left { transform: translateX(-40px); }
+  .reveal-right { transform: translateX(40px); }
+  .reveal.revealed, .reveal-left.revealed, .reveal-right.revealed {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  /* ===== Animated gradient text ===== */
+  .gradient-text {
+    background: linear-gradient(135deg, var(--accent), var(--text-primary), var(--accent));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 8s ease-in-out infinite;
+  }
+  @keyframes shimmer {
+    0%, 100% { background-position: 0% center; }
+    50% { background-position: 200% center; }
+  }
+
+  /* ===== Card shine effect ===== */
+  .card-shine {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-shine::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(196,164,108,0.06), transparent);
+    transition: left 0.6s ease;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .card-shine:hover::before { left: 100%; }
+
+  /* ===== Nav ===== */
   .nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: background 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease;
+  }
+  .nav.nav-scrolled {
     background: rgba(13, 13, 15, 0.92);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom-color: var(--border);
   }
   .nav-inner {
     max-width: var(--max-width); margin: 0 auto;
@@ -188,7 +329,7 @@ const { title, description = "Discover your innate resources through presence-ba
   }
   .nav-links a::after {
     content: ''; position: absolute; bottom: -4px; left: 0;
-    width: 0; height: 1px; background: var(--accent); transition: width 0.3s;
+    width: 0; height: 1px; background: var(--accent); transition: width 0.3s ease;
   }
   .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
   .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
@@ -201,12 +342,56 @@ const { title, description = "Discover your innate resources through presence-ba
   }
   .nav-cta::after { display: none !important; }
   .nav-cta:hover { background: var(--accent) !important; color: var(--bg-deep) !important; }
-  .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 5px; }
+  .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 5px; z-index: 110; }
   .nav-toggle span { width: 24px; height: 1.5px; background: var(--text-primary); transition: all 0.3s; }
 
-  /* Footer */
-  .footer { background: var(--bg-surface); color: var(--text-secondary); padding: 4rem 2rem 2rem; border-top: 1px solid var(--border); }
-  .footer-inner { max-width: var(--max-width); margin: 0 auto; }
+  /* Mobile overlay */
+  .nav-overlay {
+    position: fixed; inset: 0; z-index: 99;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+  .nav-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* ===== Back to top ===== */
+  .back-to-top {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 90;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--accent);
+    background: rgba(13, 13, 15, 0.85);
+    backdrop-filter: blur(8px);
+    color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    opacity: 0; transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
+    pointer-events: none;
+  }
+  .back-to-top.visible {
+    opacity: 1; transform: translateY(0);
+    pointer-events: all;
+  }
+  .back-to-top:hover {
+    background: var(--accent);
+    color: var(--bg-deep);
+  }
+
+  /* ===== Footer ===== */
+  .footer { background: var(--bg-surface); color: var(--text-secondary); padding: 0 2rem 2rem; position: relative; }
+  .footer-gradient {
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--accent) 30%, var(--accent) 70%, transparent 100%);
+    opacity: 0.4;
+  }
+  .footer-inner { max-width: var(--max-width); margin: 0 auto; padding-top: 4rem; }
   .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
   .footer h3 { font-size: 1.5rem; color: var(--text-primary); margin-bottom: 0.5rem; }
   .footer .tagline { font-style: italic; color: var(--text-muted); font-size: 0.95rem; }
@@ -220,11 +405,21 @@ const { title, description = "Discover your innate resources through presence-ba
   @media (max-width: 768px) {
     .nav-toggle { display: flex; }
     .nav-links {
-      display: none; position: absolute; top: 100%; left: 0; right: 0;
-      flex-direction: column; background: rgba(13,13,15,0.98);
-      padding: 1.5rem 2rem; gap: 1.5rem; border-bottom: 1px solid var(--border);
+      position: fixed; top: 0; right: 0; bottom: 0;
+      width: min(320px, 80vw);
+      flex-direction: column;
+      background: rgba(13,13,15,0.98);
+      padding: 5rem 2rem 2rem;
+      gap: 1.8rem;
+      border-left: 1px solid var(--border);
+      z-index: 105;
+      transform: translateX(100%);
+      transition: transform 0.35s ease;
+      display: flex;
     }
-    .nav-links.active { display: flex; }
+    .nav-links.active {
+      transform: translateX(0);
+    }
     .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
     .nav-toggle.active span:nth-child(2) { opacity: 0; }
     .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
@@ -233,5 +428,10 @@ const { title, description = "Discover your innate resources through presence-ba
   }
 
   *:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal, .reveal-left, .reveal-right { opacity: 1; transform: none; transition: none; }
+    .back-to-top { transition: none; }
+  }
 </style>
