@@ -1,0 +1,112 @@
+---
+interface Props { title: string; description?: string; }
+const { title, description = "Discover your innate resources through presence-based coaching and spinal energetics." } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="/version-c/" class="nav-logo">subtle somatics</a>
+        <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        <div class="nav-links">
+          <a href="/version-c/">Home</a>
+          <a href="/version-c/#work">My Work</a>
+          <a href="/version-c/#about">About Me</a>
+          <a href="/version-c/#reach-out">Say Hello</a>
+        </div>
+      </div>
+    </nav>
+    <main><slot /></main>
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div><p class="f-logo">subtle somatics</p><p class="f-tag">Wholeness in progress</p></div>
+          <div class="f-links">
+            <a href="mailto:connect@subtlesomatics.space">connect@subtlesomatics.space</a>
+            <a href="https://www.instagram.com/subtlesomatics/" target="_blank" rel="noopener">@subtlesomatics</a>
+          </div>
+          <form class="f-nl" action="#"><input type="email" placeholder="Stay in the loop" required /><button type="submit">Subscribe</button></form>
+        </div>
+        <p class="f-copy">&copy; 2025 Subtle Somatics. Made with care in Austria.</p>
+      </div>
+    </footer>
+    <script>const t=document.querySelector('.nav-toggle'),l=document.querySelector('.nav-links');t?.addEventListener('click',()=>{l?.classList.toggle('active');t.classList.toggle('active')});</script>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --blush: #e8c4c8;
+    --blush-light: #f3dfe1;
+    --blush-dark: #c9979e;
+    --lavender: #b8a9c9;
+    --lavender-light: #d4cbdf;
+    --sage: #9db4a0;
+    --sage-light: #c5d4c7;
+    --warm: #f5efe8;
+    --warm-dark: #e8ddd3;
+    --white: #ffffff;
+    --text: #3c2832;
+    --text-soft: #6b5060;
+    --text-muted: #9a8490;
+    --font-h: 'DM Serif Display', Georgia, serif;
+    --font-b: 'DM Sans', system-ui, sans-serif;
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:var(--font-b); font-weight:300; color:var(--text); line-height:1.75; background:var(--warm); -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4 { font-family:var(--font-h); font-weight:400; line-height:1.2; color:var(--text); }
+  h1 { font-size:clamp(2.5rem,5vw,3.8rem); }
+  h2 { font-size:clamp(1.8rem,3.5vw,2.8rem); }
+  h3 { font-size:clamp(1.3rem,2.5vw,1.7rem); }
+  p { font-size:1.05rem; max-width:62ch; }
+  a { color:var(--text); text-decoration:none; transition:all 0.3s; }
+  a:hover { color:var(--blush-dark); }
+  img { max-width:100%; height:auto; display:block; }
+  .section { padding:6rem 2rem; max-width:1000px; margin:0 auto; }
+  .text-center { text-align:center; }
+  .btn { display:inline-block; padding:0.9rem 2rem; background:var(--blush); color:var(--text); font-family:var(--font-b); font-size:0.85rem; font-weight:400; letter-spacing:0.08em; border:none; border-radius:30px; cursor:pointer; transition:all 0.3s; }
+  .btn:hover { background:var(--lavender); color:var(--text); }
+  .btn-outline { background:transparent; border:1.5px solid var(--blush-dark); color:var(--text-soft); }
+  .btn-outline:hover { background:var(--blush-light); border-color:var(--blush); }
+
+  .nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(245,239,232,0.92); backdrop-filter:blur(12px); }
+  .nav-inner { max-width:1000px; margin:0 auto; padding:1.2rem 2rem; display:flex; align-items:center; justify-content:space-between; }
+  .nav-logo { font-family:var(--font-h); font-size:1.3rem; color:var(--text); font-style:italic; }
+  .nav-links { display:flex; gap:2rem; }
+  .nav-links a { font-size:0.85rem; color:var(--text-soft); }
+  .nav-links a:hover { color:var(--text); }
+  .nav-toggle { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:5px; }
+  .nav-toggle span { width:20px; height:1.5px; background:var(--text); transition:all 0.3s; }
+
+  .footer { background:var(--text); color:var(--warm); padding:3rem 2rem 1.5rem; }
+  .footer-inner { max-width:1000px; margin:0 auto; }
+  .footer-top { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:2rem; padding-bottom:2rem; border-bottom:1px solid rgba(245,239,232,0.1); align-items:end; }
+  .f-logo { font-family:var(--font-h); font-style:italic; font-size:1.1rem; margin-bottom:0.3rem; }
+  .f-tag { font-size:0.8rem; color:var(--text-muted); font-style:italic; }
+  .f-links a { display:block; color:var(--blush-dark); font-size:0.85rem; margin-bottom:0.4rem; }
+  .f-links a:hover { color:var(--blush); }
+  .f-nl { display:flex; gap:0; }
+  .f-nl input { flex:1; padding:0.55rem 0.8rem; background:rgba(255,255,255,0.05); border:1px solid rgba(245,239,232,0.15); color:var(--warm); font-family:var(--font-b); font-size:0.8rem; border-radius:20px 0 0 20px; }
+  .f-nl input::placeholder { color:var(--text-muted); }
+  .f-nl button { padding:0.55rem 1rem; background:var(--blush); color:var(--text); border:none; font-family:var(--font-b); font-size:0.75rem; letter-spacing:0.05em; cursor:pointer; border-radius:0 20px 20px 0; }
+  .f-copy { padding-top:1.5rem; font-size:0.75rem; color:var(--text-muted); }
+
+  @media (max-width:768px) {
+    .nav-toggle { display:flex; }
+    .nav-links { display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; background:rgba(245,239,232,0.98); padding:1.5rem 2rem; gap:1.2rem; }
+    .nav-links.active { display:flex; }
+    .footer-top { grid-template-columns:1fr; }
+  }
+</style>

@@ -1,0 +1,80 @@
+---
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subtle Somatics — Compare Versions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f0f0f; color: #fff; min-height: 100vh; }
+      .header { text-align: center; padding: 4rem 2rem 3rem; }
+      .header h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 400; margin-bottom: 0.5rem; }
+      .header p { color: #999; font-size: 1rem; max-width: 600px; margin: 0 auto; }
+      .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
+      .card { border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; text-decoration: none; color: inherit; }
+      .card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+      .card-preview { height: 300px; position: relative; overflow: hidden; }
+      .card-body { padding: 1.5rem; }
+      .card-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 0.5rem; }
+      .card-body .subtitle { color: #aaa; font-size: 0.85rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.1em; }
+      .card-body p { font-size: 0.9rem; line-height: 1.6; color: #ccc; }
+      .tag { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; margin-top: 1rem; font-weight: 600; }
+      /* Version A */
+      .card-a { background: #2a2520; }
+      .card-a .card-preview { background: linear-gradient(135deg, #d4a574 0%, #8b7355 40%, #5c6b4e 100%); }
+      .card-a .card-preview::after { content: 'Earth & Flow'; position: absolute; bottom: 1.5rem; left: 1.5rem; font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: rgba(255,255,255,0.9); }
+      .card-a .tag { background: #5c6b4e; color: #e8e0d0; }
+      /* Version B */
+      .card-b { background: #1a1528; }
+      .card-b .card-preview { background: linear-gradient(135deg, #2d1b69 0%, #1a0f3c 40%, #0d0820 70%, #c9a84c 100%); }
+      .card-b .card-preview::after { content: 'Ethereal Depth'; position: absolute; bottom: 1.5rem; left: 1.5rem; font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: rgba(201,168,76,0.9); }
+      .card-b .tag { background: #2d1b69; color: #c9a84c; }
+      /* Version C */
+      .card-c { background: #2a2328; }
+      .card-c .card-preview { background: linear-gradient(135deg, #e8c4c8 0%, #d4b5c7 40%, #b8a9c9 70%, #f5efe8 100%); }
+      .card-c .card-preview::after { content: 'Soft & Personal'; position: absolute; bottom: 1.5rem; left: 1.5rem; font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: rgba(60,40,50,0.9); }
+      .card-c .tag { background: #d4b5c7; color: #3c2832; }
+      @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Subtle Somatics — Three Visions</h1>
+      <p>Three design directions for your website, Kaja. Each one captures a different facet of your practice. Click to explore.</p>
+    </div>
+    <div class="grid">
+      <a href="/version-a/" class="card card-a">
+        <div class="card-preview"></div>
+        <div class="card-body">
+          <h2>Earth & Flow</h2>
+          <div class="subtitle">The Grounded Approach</div>
+          <p>Warm earthy tones — sand, sage, terracotta. Inspired by the most popular spinal energetics practitioner sites. Grounded, natural, inviting. Emphasizes the body-based, somatic nature of your work.</p>
+          <span class="tag">Most Popular Style</span>
+        </div>
+      </a>
+      <a href="/version-b/" class="card card-b">
+        <div class="card-preview"></div>
+        <div class="card-body">
+          <h2>Ethereal Depth</h2>
+          <div class="subtitle">The Premium Approach</div>
+          <p>Deep jewel tones — midnight purple, gold, indigo. Sophisticated and mystical. Inspired by the high-end practitioner aesthetic. Speaks to the energetic, transformative depth of your offerings.</p>
+          <span class="tag">Most Elegant Style</span>
+        </div>
+      </a>
+      <a href="/version-c/" class="card card-c">
+        <div class="card-preview"></div>
+        <div class="card-body">
+          <h2>Soft & Personal</h2>
+          <div class="subtitle">The Intimate Approach</div>
+          <p>Soft pastels — blush, lavender, warm cream. Light, open, personal. Puts your warmth and humanity front and centre. Feels like an invitation into a safe, tender space.</p>
+          <span class="tag">Most Approachable Style</span>
+        </div>
+      </a>
+    </div>
+  </body>
+</html>

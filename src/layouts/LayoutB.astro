@@ -1,0 +1,120 @@
+---
+interface Props { title: string; description?: string; }
+const { title, description = "Discover your innate resources through presence-based coaching and spinal energetics." } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="/version-b/" class="nav-logo">SS</a>
+        <div class="nav-links">
+          <a href="/version-b/">Home</a>
+          <a href="/version-b/#offerings">Offerings</a>
+          <a href="/version-b/#about">About</a>
+          <a href="/version-b/#connect">Connect</a>
+        </div>
+        <a href="/version-b/#connect" class="nav-book">Book Now</a>
+        <button class="nav-toggle" aria-label="Menu"><span></span><span></span></button>
+      </div>
+    </nav>
+    <main><slot /></main>
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div>
+            <p class="footer-mark">Subtle Somatics</p>
+            <p class="footer-tag">Wholeness in progress</p>
+          </div>
+          <div>
+            <a href="mailto:connect@subtlesomatics.space">connect@subtlesomatics.space</a>
+            <a href="https://www.instagram.com/subtlesomatics/" target="_blank" rel="noopener">@subtlesomatics</a>
+          </div>
+          <div>
+            <form class="nl" action="#"><input type="email" placeholder="Your email" required /><button type="submit">&rarr;</button></form>
+          </div>
+        </div>
+        <p class="footer-copy">&copy; 2025 Subtle Somatics</p>
+      </div>
+    </footer>
+    <script>const t=document.querySelector('.nav-toggle'),l=document.querySelector('.nav-links');t?.addEventListener('click',()=>{l?.classList.toggle('active');t.classList.toggle('active')});</script>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --midnight: #0d0820;
+    --deep: #1a0f3c;
+    --indigo: #2d1b69;
+    --violet: #5b3fa0;
+    --lavender: #8b7dc8;
+    --gold: #c9a84c;
+    --gold-light: #e0cc8a;
+    --gold-dim: rgba(201,168,76,0.3);
+    --cream: #f0ece4;
+    --white: #ffffff;
+    --text-light: rgba(240,236,228,0.7);
+    --text-dim: rgba(240,236,228,0.4);
+    --font-h: 'Cormorant Garamond', Georgia, serif;
+    --font-b: 'Inter', system-ui, sans-serif;
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:var(--font-b); font-weight:300; color:var(--cream); line-height:1.7; background:var(--midnight); -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4 { font-family:var(--font-h); font-weight:300; line-height:1.15; color:var(--cream); }
+  h1 { font-size:clamp(3rem,6vw,5rem); }
+  h2 { font-size:clamp(2rem,4vw,3.2rem); }
+  h3 { font-size:clamp(1.3rem,2.5vw,1.8rem); }
+  p { font-size:1rem; max-width:60ch; }
+  a { color:var(--gold); text-decoration:none; transition:color 0.3s; }
+  a:hover { color:var(--gold-light); }
+  img { max-width:100%; height:auto; display:block; }
+  .section { padding:7rem 2rem; max-width:1100px; margin:0 auto; }
+  .text-center { text-align:center; }
+  .btn { display:inline-block; padding:0.85rem 2.5rem; border:1px solid var(--gold); color:var(--gold); font-family:var(--font-b); font-size:0.8rem; font-weight:400; letter-spacing:0.15em; text-transform:uppercase; background:transparent; cursor:pointer; transition:all 0.3s; }
+  .btn:hover { background:var(--gold); color:var(--midnight); }
+  .btn-gold { background:var(--gold); color:var(--midnight); border-color:var(--gold); }
+  .btn-gold:hover { background:var(--gold-light); }
+
+  .nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(13,8,32,0.9); backdrop-filter:blur(16px); border-bottom:1px solid rgba(201,168,76,0.08); }
+  .nav-inner { max-width:1100px; margin:0 auto; padding:1.2rem 2rem; display:flex; align-items:center; justify-content:space-between; }
+  .nav-logo { font-family:var(--font-h); font-size:1.6rem; color:var(--gold); letter-spacing:0.15em; font-weight:300; }
+  .nav-links { display:flex; gap:2.5rem; }
+  .nav-links a { font-size:0.8rem; color:var(--text-light); letter-spacing:0.1em; text-transform:uppercase; }
+  .nav-links a:hover { color:var(--gold); }
+  .nav-book { font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; padding:0.5rem 1.5rem; border:1px solid var(--gold-dim); color:var(--gold); transition:all 0.3s; }
+  .nav-book:hover { background:var(--gold); color:var(--midnight); }
+  .nav-toggle { display:none; background:none; border:none; cursor:pointer; padding:5px; flex-direction:column; gap:6px; }
+  .nav-toggle span { width:20px; height:1px; background:var(--gold); transition:all 0.3s; }
+
+  .footer { background:var(--deep); padding:4rem 2rem 2rem; border-top:1px solid rgba(201,168,76,0.08); }
+  .footer-inner { max-width:1100px; margin:0 auto; }
+  .footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(201,168,76,0.06); }
+  .footer-mark { font-family:var(--font-h); font-size:1.2rem; color:var(--cream); margin-bottom:0.3rem; }
+  .footer-tag { font-style:italic; font-size:0.85rem; color:var(--text-dim); }
+  .footer a { display:block; color:var(--text-dim); font-size:0.85rem; margin-bottom:0.5rem; }
+  .footer a:hover { color:var(--gold); }
+  .nl { display:flex; }
+  .nl input { flex:1; padding:0.6rem 1rem; background:rgba(255,255,255,0.03); border:1px solid rgba(201,168,76,0.15); color:var(--cream); font-family:var(--font-b); font-size:0.85rem; }
+  .nl input::placeholder { color:var(--text-dim); }
+  .nl button { padding:0.6rem 1rem; background:var(--gold); color:var(--midnight); border:none; font-size:1rem; cursor:pointer; }
+  .footer-copy { padding-top:2rem; font-size:0.75rem; color:var(--text-dim); }
+
+  @media (max-width:768px) {
+    .nav-toggle { display:flex; }
+    .nav-links { display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; background:rgba(13,8,32,0.98); padding:1.5rem 2rem; gap:1.2rem; }
+    .nav-links.active { display:flex; }
+    .nav-book { display:none; }
+    .footer-grid { grid-template-columns:1fr; }
+  }
+</style>
